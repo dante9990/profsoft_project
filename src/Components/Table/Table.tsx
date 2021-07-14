@@ -30,6 +30,13 @@ const GenerateRow = ({ role, id, blockUser, name, status, email }: Props) => {
 };
 export const Table = () => {
   const [users, setUsers] = useState<[] | User[]>([]);
+  const [email, setEmail] = useState("");
+
+  const handleChange = (e: any) => {
+    if (e.target) {
+      setEmail(e.target.value);
+    }
+  };
 
   const getUsers = async () => {
     await axios.get(`http://localhost:5050/users`).then((response) => {
@@ -48,6 +55,7 @@ export const Table = () => {
         return response.data;
       });
   };
+  console.log(email);
   return (
     <>
       <div className={classes.section}>
@@ -76,6 +84,7 @@ export const Table = () => {
           </tbody>
         </table>
       </div>
+      <input type="text" onChange={handleChange} value={email} />
     </>
   );
 };
