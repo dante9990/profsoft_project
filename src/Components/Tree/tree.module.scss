@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+
+.section{
+  margin: 0 auto;
+  max-width: 608px;
+  width: 100%;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+}
+
+.todo {
+  list-style-type: none;
+  color: #EB564F;
+  padding: 0;
+  margin: 0;
+  & .li {
+    margin-left: 20px;
+  }
+}
+
+.li {
+  position: relative;
+  &:before {
+    position: absolute;
+    content: "";
+    background-color: #CACED2;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    left: -10px;
+    top: 8px;
+  }
+}

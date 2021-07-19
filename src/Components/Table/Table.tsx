@@ -31,10 +31,24 @@ const GenerateRow = ({ role, id, blockUser, name, status, email }: Props) => {
 export const Table = () => {
   const [users, setUsers] = useState<[] | User[]>([]);
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [role, setRole] = useState("");
 
-  const handleChange = (e: any) => {
+  const emailChange = (e: any) => {
     if (e.target) {
       setEmail(e.target.value);
+    }
+  };
+
+  const nameChange = (e: any) => {
+    if (e.target) {
+      setName(e.target.value);
+    }
+  };
+
+  const roleChange = (e: any) => {
+    if (e.target) {
+      setRole(e.target.value);
     }
   };
 
@@ -43,6 +57,20 @@ export const Table = () => {
       setUsers(response.data);
     });
   };
+
+  const postUser = async (email: string, name: string, role: string) => {
+    await axios
+      .post(`http://localhost:5050/users`, {
+        email: email,
+        name: name,
+        role: role,
+      })
+      .then((response) => {
+        getUsers();
+        return response.data;
+      });
+  };
+
   useEffect(() => {
     getUsers();
   }, []);
@@ -55,9 +83,45 @@ export const Table = () => {
         return response.data;
       });
   };
-  console.log(email);
   return (
     <>
+      <div className={classes.inputs}>
+        <label htmlFor="">Email</label>
+        <input
+          type="text"
+          id="email"
+          onChange={emailChange}
+          value={email}
+          className={classes.input}
+        />
+        <label htmlFor="">Фамилия и имя</label>
+        <input
+          type="text"
+          id="name"
+          onChange={nameChange}
+          value={name}
+          className={classes.input}
+        />
+        <label htmlFor="">Роль</label>
+        <input
+          type="text"
+          id="role"
+          onChange={roleChange}
+          value={role}
+          className={classes.input}
+        />
+        <div
+          className={classes.blockButton}
+          onClick={() => {
+            postUser(email, name, role);
+            setEmail("");
+            setName("");
+            setRole("");
+          }}
+        >
+          <p>Добавить</p>
+        </div>
+      </div>
       <div className={classes.section}>
         <table className={classes.table}>
           <thead className={classes.thead}>
@@ -84,7 +148,6 @@ export const Table = () => {
           </tbody>
         </table>
       </div>
-      <input type="text" onChange={handleChange} value={email} />
     </>
   );
 };
