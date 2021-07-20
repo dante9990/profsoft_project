@@ -2,6 +2,7 @@ export type TreeData = {
   id: number;
   name: string;
   organizations: Organization[];
+  users?: UserTree[];
 };
 
 export type Organization = {
