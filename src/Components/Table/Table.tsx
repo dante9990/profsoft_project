@@ -3,8 +3,10 @@ import classes from "./table.module.scss";
 import axios from "axios";
 import { User } from "../../types/user";
 
+import { api } from "../../service/api.service";
+
 type Props = {
-  blockUser(id: number): Promise<User>;
+  blockUser(id: number): void;
 } & User;
 const GenerateRow = ({ role, id, blockUser, name, status, email }: Props) => {
   const statusName = status === 1 ? "Активен" : "Заблокирован";
@@ -53,22 +55,32 @@ export const Table = () => {
   };
 
   const getUsers = async () => {
-    await axios.get(`http://localhost:5050/users`).then((response) => {
-      setUsers(response.data);
-    });
+    const response = await api["users"].getList();
+    setUsers(response);
+    // await axios.get(`http://localhost:5050/users`).then((response) => {
+    //   setUsers(response.data);
+    // });
   };
 
   const postUser = async (email: string, name: string, role: string) => {
-    await axios
-      .post(`http://localhost:5050/users`, {
-        email: email,
-        name: name,
-        role: role,
-      })
-      .then((response) => {
-        getUsers();
-        return response.data;
-      });
+    const response = await api["users"].post({
+      email: email,
+      name: name,
+      role: role,
+    });
+    if (response) {
+      await getUsers();
+    }
+    // await axios
+    //   .post(`http://localhost:5050/users`, {
+    //     email: email,
+    //     name: name,
+    //     role: role,
+    //   })
+    //   .then((response) => {
+    //     getUsers();
+    //     return response.data;
+    //   });
   };
 
   useEffect(() => {
@@ -76,12 +88,16 @@ export const Table = () => {
   }, []);
 
   const blockUser = async (id: number) => {
-    return axios
-      .delete(`http://localhost:5050/users/${id}`)
-      .then((response) => {
-        getUsers();
-        return response.data;
-      });
+    const response = await api["users"].delete(id);
+    if (response) {
+      await getUsers();
+    }
+    // return axios
+    //   .delete(`http://localhost:5050/users/${id}`)
+    //   .then((response) => {
+    //     getUsers();
+    //     return response.data;
+    //   });
   };
   return (
     <>

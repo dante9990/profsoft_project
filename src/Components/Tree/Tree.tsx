@@ -4,14 +4,14 @@ import { TreeData } from "../../types/tree";
 // import { Organization } from "../../types/organization";
 import { UserTree } from "../../types/tree";
 import axios from "axios";
+import { api } from "../../service/api.service";
 
 export const Tree = () => {
   const [tree, setTree] = useState<[] | TreeData[]>([]);
 
   const getTree = async () => {
-    await axios.get(`http://localhost:5050/tree`).then((response) => {
-      setTree(response.data);
-    });
+    const response = await api["tree"].getList();
+    setTree(response);
   };
 
   useEffect(() => {

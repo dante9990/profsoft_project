@@ -1,7 +1,10 @@
+export type UserCreate = {
+  name: string;
+  email: string;
+  role: string;
+};
+
 export type User = {
-    name: string;
-    email: string;
-    role: string;
-    id: number;
-    status: number;
-}
+  id: number;
+  status: number;
+} & UserCreate;

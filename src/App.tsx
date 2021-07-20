@@ -7,8 +7,8 @@ export function App() {
     <Switch>
       <Route path={"/counter"} component={Counter} exact={true} />
       <Route path={"/"} exact={true}>
-        <Tree />
-        {/*<Table />*/}
+        {/*<Tree />*/}
+        <Table />
         {/*<NavLink to={"/counter"} className={classes.link}>*/}
         {/*  Перейти к счетчику*/}
         {/*</NavLink>*/}
