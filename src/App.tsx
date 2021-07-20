@@ -5,13 +5,12 @@ import classes from "./app.module.scss";
 export function App() {
   return (
     <Switch>
-      <Route path={"/counter"} component={Counter} exact={true} />
+      <Route path={"/tree"} component={Tree} exact={true} />
       <Route path={"/"} exact={true}>
-        {/*<Tree />*/}
+        <NavLink to={"/tree"} className={classes.link}>
+          Перейти к дереву
+        </NavLink>
         <Table />
-        {/*<NavLink to={"/counter"} className={classes.link}>*/}
-        {/*  Перейти к счетчику*/}
-        {/*</NavLink>*/}
       </Route>
     </Switch>
   );
