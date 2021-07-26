@@ -8,9 +8,7 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Drawer, Icon } from "@material-ui/core";
-import clsx from "clsx";
 import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -18,6 +16,7 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import MoodBadIcon from "@material-ui/icons/MoodBad";
 import MoodIcon from "@material-ui/icons/Mood";
+import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -52,6 +51,18 @@ export const Bar = () => {
         <ListItem
           button
           onClick={() => {
+            history.push("/");
+          }}
+        >
+          <ListItemIcon>
+            {/*{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}*/}
+            <MoodBadIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Главная страница"} />
+        </ListItem>
+        <ListItem
+          button
+          onClick={() => {
             history.push("/table");
           }}
         >
@@ -64,23 +75,39 @@ export const Bar = () => {
         <ListItem
           button
           onClick={() => {
-            history.push("/");
+            history.push("/counter");
           }}
         >
           <ListItemIcon>
             {/*{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}*/}
             <MoodBadIcon />
           </ListItemIcon>
-          <ListItemText primary={"Главная страница"} />
+          <ListItemText primary={"Счетчик"} />
         </ListItem>
-        {/*{["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (*/}
-        {/*  <ListItem button key={text}>*/}
-        {/*    <ListItemIcon>*/}
-        {/*      {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}*/}
-        {/*    </ListItemIcon>*/}
-        {/*    <ListItemText primary={text} />*/}
-        {/*  </ListItem>*/}
-        {/*))}*/}
+        <ListItem
+          button
+          onClick={() => {
+            history.push("/tree");
+          }}
+        >
+          <ListItemIcon>
+            {/*{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}*/}
+            <MoodBadIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Дерево"} />
+        </ListItem>
+        <ListItem
+          button
+          onClick={() => {
+            history.push("/card");
+          }}
+        >
+          <ListItemIcon>
+            {/*{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}*/}
+            <MoodBadIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Карточки"} />
+        </ListItem>
       </List>
       {/*<Divider />*/}
       {/*<List>*/}
@@ -113,7 +140,14 @@ export const Bar = () => {
             <Typography variant="h6" className={classes.title}>
               Главная страница
             </Typography>
-            <Button color="inherit">Login</Button>
+            <Button
+              color="inherit"
+              onClick={() => {
+                history.push("/login");
+              }}
+            >
+              Login
+            </Button>
           </Toolbar>
         </AppBar>
       </div>

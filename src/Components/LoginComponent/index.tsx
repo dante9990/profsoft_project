@@ -1,7 +1,14 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
-import { TextField } from "@material-ui/core";
+import { Paper, TextField } from "@material-ui/core";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Container from "@material-ui/core/Container";
+
+import styles from "./loginComponnent.module.scss";
+import Link from "@material-ui/core/Link";
+import Typography from "@material-ui/core/Typography";
+import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -23,12 +30,34 @@ export const LoginComponent = () => {
   const classes = useStyles();
   return (
     <>
-      <TextField id="filled-basic" label="Filled" variant="filled" />
-      <TextField id="filled-basic" label="Filled" variant="filled" />
-      <TextField id="filled-basic" label="Filled" variant="filled" />
-      <Button variant="contained" color="secondary">
-        fsdggg
-      </Button>
+      <CssBaseline />
+      <Container maxWidth="sm">
+        <Breadcrumbs aria-label="breadcrumb">
+          <Link color="inherit" href="/">
+            Главная страница
+          </Link>
+          <Typography color="textPrimary">Логин</Typography>
+        </Breadcrumbs>
+        <Paper elevation={3}>
+          <div className={styles.container}>
+            <TextField
+              label="Логин"
+              variant="filled"
+              className={classes.input}
+              type={"email"}
+            />
+            <TextField
+              label="Пароль"
+              variant="filled"
+              className={classes.input}
+              type={"password"}
+            />
+            <Button variant="contained" color="secondary">
+              Войти
+            </Button>
+          </div>
+        </Paper>
+      </Container>
     </>
   );
 };

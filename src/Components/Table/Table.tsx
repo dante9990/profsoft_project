@@ -1,13 +1,35 @@
 import React, { useEffect, useState } from "react";
-import classes from "./table.module.scss";
-import axios from "axios";
+import styles from "./table.module.scss";
 import { User } from "../../types/user";
 
 import { api } from "../../service/api.service";
+import { CssBaseline } from "@material-ui/core";
+import Container from "@material-ui/core/Container";
+import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
+import Breadcrumbs from "@material-ui/core/Breadcrumbs";
+import Link from "@material-ui/core/Link";
+import Typography from "@material-ui/core/Typography";
 
 type Props = {
   blockUser(id: number): void;
 } & User;
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      flexGrow: 1,
+      padding: theme.spacing(5),
+    },
+    paper: {
+      padding: theme.spacing(2),
+      textAlign: "justify",
+      color: theme.palette.text.secondary,
+    },
+  })
+);
+
 const GenerateRow = ({ role, id, blockUser, name, status, email }: Props) => {
   const statusName = status === 1 ? "Активен" : "Заблокирован";
   const buttonName = status === 1 ? "Блокировать" : "Разблокировать";
@@ -18,14 +40,15 @@ const GenerateRow = ({ role, id, blockUser, name, status, email }: Props) => {
       <td>{role}</td>
       <td>{statusName}</td>
       <td>
-        <div
-          className={classes.blockButton}
+        <Button
+          variant="contained"
+          color="secondary"
           onClick={() => {
             blockUser(id);
           }}
         >
           <p>{buttonName}</p>
-        </div>
+        </Button>
       </td>
     </tr>
   );
@@ -35,6 +58,8 @@ export const Table = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [role, setRole] = useState("");
+
+  const classes = useStyles();
 
   const emailChange = (e: any) => {
     if (e.target) {
@@ -101,69 +126,87 @@ export const Table = () => {
   };
   return (
     <>
-      <div className={classes.inputs}>
-        <label htmlFor="">Email</label>
-        <input
-          type="text"
-          id="email"
-          onChange={emailChange}
-          value={email}
-          className={classes.input}
-        />
-        <label htmlFor="">Фамилия и имя</label>
-        <input
-          type="text"
-          id="name"
-          onChange={nameChange}
-          value={name}
-          className={classes.input}
-        />
-        <label htmlFor="">Роль</label>
-        <input
-          type="text"
-          id="role"
-          onChange={roleChange}
-          value={role}
-          className={classes.input}
-        />
-        <div
-          className={classes.blockButton}
-          onClick={() => {
-            postUser(email, name, role);
-            setEmail("");
-            setName("");
-            setRole("");
-          }}
-        >
-          <p>Добавить</p>
-        </div>
-      </div>
-      <div className={classes.section}>
-        <table className={classes.table}>
-          <thead className={classes.thead}>
-            <tr>
-              <th className={classes.th}>Email</th>
-              <th className={classes.th}>Фамилия и имя</th>
-              <th className={classes.th}>Роль</th>
-              <th className={classes.th}>Статус</th>
-              <th className={classes.th}>Действия</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map((user) => (
-              <GenerateRow
-                name={user.name}
-                email={user.email}
-                role={user.role}
-                id={user.id}
-                status={user.status}
-                key={user.id}
-                blockUser={blockUser}
+      <CssBaseline />
+      <Container maxWidth="md">
+        <Breadcrumbs aria-label="breadcrumb">
+          <Link color="inherit" href="/">
+            Главная страница
+          </Link>
+          <Typography color="textPrimary">Таблица</Typography>
+        </Breadcrumbs>
+        <div className={styles.inputs}>
+          <div className={classes.root}>
+            <Grid item xs={12}>
+              <input
+                type="text"
+                id="email"
+                onChange={emailChange}
+                value={email}
+                className={classes.paper}
+                placeholder="Еmail"
               />
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </Grid>
+            <Grid item xs={12}>
+              <input
+                type="text"
+                id="name"
+                onChange={nameChange}
+                value={name}
+                className={classes.paper}
+                placeholder="Фамилия и имя"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <input
+                type="text"
+                id="role"
+                onChange={roleChange}
+                value={role}
+                className={classes.paper}
+                placeholder="Роль"
+              />
+            </Grid>
+          </div>
+          <Button
+            variant="contained"
+            color="secondary"
+            onClick={() => {
+              postUser(email, name, role);
+              setEmail("");
+              setName("");
+              setRole("");
+            }}
+          >
+            <p>Добавить</p>
+          </Button>
+        </div>
+        <div className={styles.section}>
+          <table className={styles.table}>
+            <thead className={styles.thead}>
+              <tr>
+                <th className={styles.th}>Email</th>
+                <th className={styles.th}>Фамилия и имя</th>
+                <th className={styles.th}>Роль</th>
+                <th className={styles.th}>Статус</th>
+                <th className={styles.th}>Действия</th>
+              </tr>
+            </thead>
+            <tbody>
+              {users.map((user) => (
+                <GenerateRow
+                  name={user.name}
+                  email={user.email}
+                  role={user.role}
+                  id={user.id}
+                  status={user.status}
+                  key={user.id}
+                  blockUser={blockUser}
+                />
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </Container>
     </>
   );
 };

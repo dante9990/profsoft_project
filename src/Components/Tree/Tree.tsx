@@ -5,6 +5,11 @@ import { TreeData } from "../../types/tree";
 import { UserTree } from "../../types/tree";
 import axios from "axios";
 import { api } from "../../service/api.service";
+import { CssBaseline } from "@material-ui/core";
+import Container from "@material-ui/core/Container";
+import Link from "@material-ui/core/Link";
+import Typography from "@material-ui/core/Typography";
+import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 
 export const Tree = () => {
   const [tree, setTree] = useState<[] | TreeData[]>([]);
@@ -81,10 +86,19 @@ export const Tree = () => {
   );
 
   return (
-    <div className={classes.body}>
-      <div className={classes.container}>
-        <SubTree data={tree} />
-      </div>
-    </div>
+    <>
+      <CssBaseline />
+      <Container maxWidth="sm">
+        <Breadcrumbs aria-label="breadcrumb">
+          <Link color="inherit" href="/">
+            Главная страница
+          </Link>
+          <Typography color="textPrimary">Дерево</Typography>
+        </Breadcrumbs>
+        <div className={classes.container}>
+          <SubTree data={tree} />
+        </div>
+      </Container>
+    </>
   );
 };
