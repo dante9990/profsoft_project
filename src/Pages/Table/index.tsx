@@ -1,11 +1,8 @@
 import React from "react";
-import { Bar, Table } from "../../Components";
+import { Bar, Table, Wrapper } from "../../Components";
 
 export const TablePage = () => {
   return (
-    <>
-      <Bar />
-      <Table />
-    </>
+    <Wrapper Child={Table} title={'sss'}/>
   );
-};
+}

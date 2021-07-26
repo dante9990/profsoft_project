@@ -4,12 +4,14 @@ import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { Paper, TextField } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
+import {useFormik} from "formik";
 
 import styles from "./loginComponnent.module.scss";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import { useHistory } from "react-router-dom";
+import * as Yup from 'yup';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -28,6 +30,20 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export const LoginComponent = () => {
+
+    const {values, errors, handleChange, handleSubmit, touched} = useFormik({
+        initialValues: {
+            email: '',
+            password: ''
+        },
+        validationSchema: Yup.object().shape({
+            email: Yup.string().email("Не является email").required("Обязательное поле для заполнения"),
+            password: Yup.string().required("Обязательное поле для заполнения")
+        }),
+        onSubmit: ()=>{
+            console.log(values)
+        }
+    })
   const classes = useStyles();
   const history = useHistory();
   return (
@@ -46,23 +62,33 @@ export const LoginComponent = () => {
           <Typography color="textPrimary">Логин</Typography>
         </Breadcrumbs>
         <Paper elevation={3}>
-          <div className={styles.container}>
+          <form className={styles.container} onSubmit={handleSubmit}>
             <TextField
               label="Логин"
               variant="filled"
               className={classes.input}
               type={"email"}
+              value={values.email}
+              name={'email'}
+              onChange={handleChange}
+              error={!!(errors.email && touched.email)}
+              helperText={errors.email && touched.email ? errors.email : "Здесь будет выводится ошибка"}
             />
             <TextField
               label="Пароль"
               variant="filled"
               className={classes.input}
               type={"password"}
+              value={values.password}
+              name={'password'}
+              onChange={handleChange}
+              error={!!(errors.password && touched.password)}
+              helperText={errors.password && touched.password ? errors.password : null}
             />
-            <Button variant="contained" color="secondary">
+            <Button variant="contained" color="secondary" type={"submit"}>
               Войти
             </Button>
-          </div>
+          </form>
         </Paper>
       </Container>
     </>
