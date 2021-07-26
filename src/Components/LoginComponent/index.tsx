@@ -9,6 +9,7 @@ import styles from "./loginComponnent.module.scss";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -28,12 +29,18 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const LoginComponent = () => {
   const classes = useStyles();
+  const history = useHistory();
   return (
     <>
       <CssBaseline />
       <Container maxWidth="sm">
         <Breadcrumbs aria-label="breadcrumb">
-          <Link color="inherit" href="/">
+          <Link
+            color="inherit"
+            onClick={() => {
+              history.push("/");
+            }}
+          >
             Главная страница
           </Link>
           <Typography color="textPrimary">Логин</Typography>

@@ -1,6 +1,5 @@
 import React from "react";
-import { Bar } from "../../Components";
-import { CardComponent } from "../../Components/Card";
+import { Bar, CardComponent } from "../../Components";
 
 export const CardPage = () => {
   return (

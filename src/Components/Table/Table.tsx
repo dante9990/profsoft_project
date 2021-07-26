@@ -11,6 +11,7 @@ import Button from "@material-ui/core/Button";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
+import { useHistory } from "react-router-dom";
 
 type Props = {
   blockUser(id: number): void;
@@ -58,6 +59,7 @@ export const Table = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [role, setRole] = useState("");
+  const history = useHistory();
 
   const classes = useStyles();
 
@@ -129,7 +131,12 @@ export const Table = () => {
       <CssBaseline />
       <Container maxWidth="md">
         <Breadcrumbs aria-label="breadcrumb">
-          <Link color="inherit" href="/">
+          <Link
+            color="inherit"
+            onClick={() => {
+              history.push("/");
+            }}
+          >
             Главная страница
           </Link>
           <Typography color="textPrimary">Таблица</Typography>

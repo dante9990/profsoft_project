@@ -7,9 +7,11 @@ import Typography from "@material-ui/core/Typography";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import { Paper } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
+import { useHistory } from "react-router-dom";
 
 export const Counter = () => {
   const [counter, setCounter] = useState(0);
+  const history = useHistory();
   const handleClick = () => {
     setCounter((prev) => prev + 1);
   };
@@ -18,7 +20,12 @@ export const Counter = () => {
       <CssBaseline />
       <Container maxWidth="sm">
         <Breadcrumbs aria-label="breadcrumb">
-          <Link color="inherit" href="/">
+          <Link
+            color="inherit"
+            onClick={() => {
+              history.push("/");
+            }}
+          >
             Главная страница
           </Link>
           <Typography color="textPrimary">Счетчик</Typography>

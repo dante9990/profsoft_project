@@ -10,9 +10,11 @@ import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
+import { useHistory } from "react-router-dom";
 
 export const Tree = () => {
   const [tree, setTree] = useState<[] | TreeData[]>([]);
+  const history = useHistory();
 
   const getTree = async () => {
     const response = await api["tree"].getList();
@@ -90,7 +92,12 @@ export const Tree = () => {
       <CssBaseline />
       <Container maxWidth="sm">
         <Breadcrumbs aria-label="breadcrumb">
-          <Link color="inherit" href="/">
+          <Link
+            color="inherit"
+            onClick={() => {
+              history.push("/");
+            }}
+          >
             Главная страница
           </Link>
           <Typography color="textPrimary">Дерево</Typography>

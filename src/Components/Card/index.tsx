@@ -11,6 +11,7 @@ import { CssBaseline } from "@material-ui/core";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -44,6 +45,7 @@ const useStyles = makeStyles({
 
 export const CardComponent = () => {
   const [users, setUsers] = useState<[] | User[]>([]);
+  const history = useHistory();
 
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
@@ -64,7 +66,12 @@ export const CardComponent = () => {
       <CssBaseline />
       <Container maxWidth="sm">
         <Breadcrumbs aria-label="breadcrumb">
-          <Link color="inherit" href="/">
+          <Link
+            color="inherit"
+            onClick={() => {
+              history.push("/");
+            }}
+          >
             Главная страница
           </Link>
           <Typography color="textPrimary">Карточки</Typography>
