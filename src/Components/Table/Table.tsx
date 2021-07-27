@@ -3,7 +3,7 @@ import styles from "./table.module.scss";
 import { User } from "../../types/user";
 
 import { api } from "../../service/api.service";
-import { CssBaseline } from "@material-ui/core";
+import { CssBaseline, TextField } from "@material-ui/core";
 import Container from "@material-ui/core/Container";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -12,6 +12,8 @@ import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 import { useHistory } from "react-router-dom";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 type Props = {
   blockUser(id: number): void;
@@ -21,7 +23,8 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
-      padding: theme.spacing(5),
+      paddingRight: theme.spacing(5),
+      paddingLeft: theme.spacing(5),
     },
     paper: {
       padding: theme.spacing(2),
@@ -126,6 +129,36 @@ export const Table = () => {
     //     return response.data;
     //   });
   };
+
+  const { values, errors, handleChange, handleSubmit, touched } = useFormik({
+    initialValues: {
+      email: "",
+      name: "",
+      role: "",
+    },
+    validationSchema: Yup.object().shape({
+      email: Yup.string()
+        .email("Не является email")
+        .min(2, "Недостаточно символов")
+        .max(20, "Привышено символов")
+        .required("Введите email"),
+      name: Yup.string()
+        .min(2, "Недостаточно символов")
+        .max(20, "Привышено символов")
+        .required("Введите ФИО"),
+      role: Yup.string()
+        .min(2, "Недостаточно символов")
+        .max(20, "Привышено символов")
+        .required("Введите роль"),
+    }),
+    onSubmit: () => {
+      postUser(values.email, values.name, values.role);
+      setEmail("");
+      setName("");
+      setRole("");
+    },
+  });
+
   return (
     <>
       <CssBaseline />
@@ -141,52 +174,66 @@ export const Table = () => {
           </Link>
           <Typography color="textPrimary">Таблица</Typography>
         </Breadcrumbs>
-        <div className={styles.inputs}>
+        <form className={styles.inputs} onSubmit={handleSubmit}>
           <div className={classes.root}>
-            <Grid item xs={12}>
-              <input
-                type="text"
-                id="email"
-                onChange={emailChange}
-                value={email}
-                className={classes.paper}
-                placeholder="Еmail"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <input
-                type="text"
-                id="name"
-                onChange={nameChange}
-                value={name}
-                className={classes.paper}
-                placeholder="Фамилия и имя"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <input
-                type="text"
-                id="role"
-                onChange={roleChange}
-                value={role}
-                className={classes.paper}
-                placeholder="Роль"
-              />
+            <Grid container justifyContent={"center"} spacing={1}>
+              <Grid item xs={12}>
+                <TextField
+                  placeholder="Email"
+                  variant="filled"
+                  className={classes.paper}
+                  type={"text"}
+                  value={values.email}
+                  name={"email"}
+                  onChange={handleChange}
+                  error={!!(errors.email && touched.email)}
+                  helperText={
+                    errors.email && touched.email
+                      ? errors.email
+                      : "Здесь будет выводится ошибка"
+                  }
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  placeholder="Фамилия и имя"
+                  variant="filled"
+                  className={classes.paper}
+                  type={"text"}
+                  value={values.name}
+                  name={"name"}
+                  onChange={handleChange}
+                  error={!!(errors.name && touched.name)}
+                  helperText={
+                    errors.name && touched.name
+                      ? errors.name
+                      : "Здесь будет выводится ошибка"
+                  }
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  placeholder="Роль"
+                  variant="filled"
+                  className={classes.paper}
+                  type={"text"}
+                  value={values.role}
+                  name={"role"}
+                  onChange={handleChange}
+                  error={!!(errors.role && touched.role)}
+                  helperText={
+                    errors.role && touched.role
+                      ? errors.role
+                      : "Здесь будет выводится ошибка"
+                  }
+                />
+              </Grid>
             </Grid>
           </div>
-          <Button
-            variant="contained"
-            color="secondary"
-            onClick={() => {
-              postUser(email, name, role);
-              setEmail("");
-              setName("");
-              setRole("");
-            }}
-          >
+          <Button variant="contained" color="secondary" type={"submit"}>
             <p>Добавить</p>
           </Button>
-        </div>
+        </form>
         <div className={styles.section}>
           <table className={styles.table}>
             <thead className={styles.thead}>

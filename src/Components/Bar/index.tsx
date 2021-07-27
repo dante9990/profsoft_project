@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { useHistory, useLocation } from "react-router-dom";
 import AppBar from "@material-ui/core/AppBar";
@@ -17,7 +17,7 @@ import MailIcon from "@material-ui/icons/Mail";
 import MoodBadIcon from "@material-ui/icons/MoodBad";
 import MoodIcon from "@material-ui/icons/Mood";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
-import {routes} from "../../service/routes";
+import { routes } from "../../service/routes";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -36,12 +36,12 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const findNameByPath = (path:string)  => {
-    const patnName = path.split('/')[1]
-    const route = routes.find(r=>r.path === patnName)
+const findNameByPath = (path: string) => {
+  const patnName = path.split("/")[1];
+  const route = routes.find((r) => r.path === patnName);
 
-    return route ? route.title : ''
-}
+  return route ? route.title : "";
+};
 export const Bar = () => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
@@ -51,30 +51,32 @@ export const Bar = () => {
   const handleOpen = () => {
     setOpen(!open);
   };
-  const [title, setTitle] = useState('Главная страница')
-  const location = useLocation()
-    useEffect(() => {
-        setTitle(findNameByPath(location.pathname))
-    }, [location])
+  const [title, setTitle] = useState("Главная страница");
+  const location = useLocation();
+  useEffect(() => {
+    setTitle(findNameByPath(location.pathname));
+  }, [location]);
 
   const list = () => (
     <div className={classes.list} role="presentation">
       <List>
-          {routes.map(route => {
-             return route.path !== 'login' ? (<ListItem
-                  button
-                  onClick={() => {
-                      history.push(`${route.path}`);
-                  }}
-                  key={route.id}
-              >
-                  <ListItemIcon>
-                      {/*{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}*/}
-                      <MoodBadIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={`${route.title}`} />
-              </ListItem>) : null
-          })}
+        {routes.map((route) => {
+          return route.path !== "login" ? (
+            <ListItem
+              button
+              onClick={() => {
+                history.push(`${route.path}`);
+              }}
+              key={route.id}
+            >
+              <ListItemIcon>
+                {/*{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}*/}
+                <MoodBadIcon />
+              </ListItemIcon>
+              <ListItemText primary={`${route.title}`} />
+            </ListItem>
+          ) : null;
+        })}
         <ListItem
           button
           onClick={() => {
@@ -87,66 +89,7 @@ export const Bar = () => {
           </ListItemIcon>
           <ListItemText primary={"Главная страница"} />
         </ListItem>
-        {/*<ListItem*/}
-        {/*  button*/}
-        {/*  onClick={() => {*/}
-        {/*    history.push("/table");*/}
-        {/*  }}*/}
-        {/*>*/}
-        {/*  <ListItemIcon>*/}
-        {/*    /!*{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}*!/*/}
-        {/*    <MoodBadIcon />*/}
-        {/*  </ListItemIcon>*/}
-        {/*  <ListItemText primary={"Таблица"} />*/}
-        {/*</ListItem>*/}
-        {/*<ListItem*/}
-        {/*  button*/}
-        {/*  onClick={() => {*/}
-        {/*    history.push("/counter");*/}
-        {/*  }}*/}
-        {/*>*/}
-        {/*  <ListItemIcon>*/}
-        {/*    /!*{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}*!/*/}
-        {/*    <MoodBadIcon />*/}
-        {/*  </ListItemIcon>*/}
-        {/*  <ListItemText primary={"Счетчик"} />*/}
-        {/*</ListItem>*/}
-        {/*<ListItem*/}
-        {/*  button*/}
-        {/*  onClick={() => {*/}
-        {/*    history.push("/tree");*/}
-        {/*  }}*/}
-        {/*>*/}
-        {/*  <ListItemIcon>*/}
-        {/*    /!*{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}*!/*/}
-        {/*    <MoodBadIcon />*/}
-        {/*  </ListItemIcon>*/}
-        {/*  <ListItemText primary={"Дерево"} />*/}
-        {/*</ListItem>*/}
-        {/*<ListItem*/}
-        {/*  button*/}
-        {/*  onClick={() => {*/}
-        {/*    history.push("/card");*/}
-        {/*  }}*/}
-        {/*>*/}
-        {/*  <ListItemIcon>*/}
-        {/*    /!*{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}*!/*/}
-        {/*    <MoodBadIcon />*/}
-        {/*  </ListItemIcon>*/}
-        {/*  <ListItemText primary={"Карточки"} />*/}
-        {/*</ListItem>*/}
       </List>
-      {/*<Divider />*/}
-      {/*<List>*/}
-      {/*  {["All mail", "Trash", "Spam"].map((text, index) => (*/}
-      {/*    <ListItem button key={text}>*/}
-      {/*      <ListItemIcon>*/}
-      {/*        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}*/}
-      {/*      </ListItemIcon>*/}
-      {/*      <ListItemText primary={text} />*/}
-      {/*    </ListItem>*/}
-      {/*  ))}*/}
-      {/*</List>*/}
     </div>
   );
 
@@ -165,7 +108,7 @@ export const Bar = () => {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" className={classes.title}>
-                {title}
+              {title}
             </Typography>
             <Button
               color="inherit"
