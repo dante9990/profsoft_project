@@ -7,15 +7,34 @@
     width: 870px;
   }
   &__title {
+    position: relative;
     font-weight: 500;
     font-size: 32px;
     text-transform: uppercase;
     padding: 0;
     margin: 0;
+    &:after {
+      position: absolute;
+      content: '';
+      width: 39px;
+      height: 24px;
+      background: url("../../assets/arrow-white.svg");
+      right: 300px;
+      top: 5px;
+    }
   }
   &__subtitle {
     font-size: 18px;
     margin-top: 15px;
+  }
+  &:after {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url("../../assets/plus.svg");
+    right: 20px;
+    top: 100px;
   }
 }
 

@@ -5,6 +5,7 @@ import { Button } from "../Button";
 export const Information = () => {
   return (
     <>
+      {/*<div className={classes.plus}></div>*/}
       <div className={classes.container}>
         <div className={classes.info}>
           <h1 className={classes.info__title}>
