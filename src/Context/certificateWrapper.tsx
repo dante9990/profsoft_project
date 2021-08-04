@@ -52,7 +52,7 @@ export const CertificateWrapper: FC<Props> = ({ children }: Props) => {
         certificate: certificate.certificate,
         isShow: certificate.isShow,
         fillData,
-        hideCert,
+        // hideCert,
       }}
     >
       {children}

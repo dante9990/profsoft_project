@@ -12,7 +12,7 @@ import { Certificate, CertificateContext } from "../../Context/certificate";
 
 export const CertificateCom = () => {
   const [input, setInput] = useState("");
-  const { isShow, certificate, fillData, hideCert } =
+  const { isShow, certificate, fillData } =
     useContext(CertificateContext);
   const simulation = () => {
     const data: Certificate = {
@@ -38,7 +38,6 @@ export const CertificateCom = () => {
   const inputChange = (e: any) => {
     if (e.target) {
       setInput(e.target.value);
-      console.log(input.length);
     }
   };
 
