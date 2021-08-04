@@ -27,7 +27,7 @@ export const Information = () => {
             но и подготавливаем квалифицированных IT-специалистов
           </p>
         </div>
-        {/*<School />*/}
+        <School />
         <div className={classes.school}>
           <div className={classes.school__item}>
             <h3 className={classes.school__num}>3</h3>
