@@ -23,6 +23,7 @@ export const Directions = () => {
           <div className={classes.image}></div>
           <div className={classes.image}></div>
         </div>
+        <div className={classes.line}></div>
       </div>
     </>
   );

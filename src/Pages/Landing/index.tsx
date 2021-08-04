@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { Main } from "../../Layouts/Main";
 import { Container } from "../../Components/Container";
 import { Wrapper } from "../../Components/Wrapper";
 import { Information } from "../../Components/Information";
-import { Certificate } from "../../Components/Certificate";
+import { CertificateCom } from "../../Components/Certificate";
 import { Directions } from "../../Components/Directions";
 
 export const Content = () => {
@@ -25,7 +25,7 @@ export const Landing = () => {
       </Wrapper>
       <Wrapper theme={"light"}>
         <Container>
-          <Certificate />
+          <CertificateCom />
         </Container>
       </Wrapper>
       <Wrapper theme={"dark"}>

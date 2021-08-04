@@ -10,7 +10,7 @@ export const Header = () => {
   const history = useHistory();
   return (
     <header className={classes.header}>
-      <Logo />
+      <Logo className={classes.logo} />
       <div>
         <NavLink
           to={"/"}
@@ -31,8 +31,8 @@ export const Header = () => {
         <NavLink to={"/login"} className={classes.header__link__entry}>
           Войти
         </NavLink>
+        <Hamburger />
       </div>
-      <Hamburger />
     </header>
   );
 };

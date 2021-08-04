@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./information.module.scss";
 import { Button } from "../Button";
+import { School } from "../School";
 
 export const Information = () => {
   return (
@@ -26,6 +27,7 @@ export const Information = () => {
             но и подготавливаем квалифицированных IT-специалистов
           </p>
         </div>
+        {/*<School />*/}
         <div className={classes.school}>
           <div className={classes.school__item}>
             <h3 className={classes.school__num}>3</h3>

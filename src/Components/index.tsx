@@ -1,6 +1,6 @@
-export { Counter } from "./Counter/Counter";
-export { Table } from "./Table/Table";
-export { Tree } from "./Tree/Tree";
-export { Bar } from "./Bar/index";
-export { CardComponent } from "./Card/index";
-export {Wrapper} from './Wrapper/index'
+export { Counter } from "./otherProject/Counter/Counter";
+export { Table } from "./otherProject/Table/Table";
+export { Tree } from "./otherProject/Tree/Tree";
+export { Bar } from "./otherProject/Bar/index";
+export { CardComponent } from "./otherProject/Card/index";
+export { Wrapper } from "./Wrapper/index";

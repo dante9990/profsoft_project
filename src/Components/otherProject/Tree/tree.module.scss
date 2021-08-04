@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+
+.body {
+  font-family: 'Source Sans Pro', sans-serif;
+  width: 100vw;
+  height: 100vh;
+}
+
+ul{
+  list-style: none;
+  color: #EB564F;
+}
+li{
+  margin-top: 28px;
+
+}
+
+.expandingText{
+  cursor: pointer;
+}
+
+ul li::before {
+  content: "\00B7";
+  color: #CACED2;
+  font-weight: bold;
+  display: inline-block;
+  width: 12px;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.userNames{
+  color:#444A52;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: 0.15px;
+}
+
+.userNames::before{
+  content: none;
+}
+
+.userSurnames{
+  font-weight: bold;
+}
+
+.userOrgNames{
+  margin-left: 12px;
+  font-weight: 550;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: #CACED2;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  &__button {
+    border-radius: 4px;
+    background: #FF3333;
+    color: white;
+    font-size: 16px;
+    padding: 12px 10px 13px 7px;
+  }
+}

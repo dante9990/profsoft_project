@@ -12,8 +12,12 @@
   font-weight: 600;
   font-size: 18px;
   text-transform: uppercase;
+  padding: 0;
   &:hover {
     cursor: pointer;
+  }
+  &:active {
+    background-color: #DECE3A
   }
 }
 

@@ -8,7 +8,7 @@ import { Footer } from "../../Components/Footer";
 import classes from "./main.module.scss";
 
 interface Props {
-  children: any;
+  children: ReactElement | ReactElement[] | string;
 }
 export const Main: FC<Props> = ({ children }: Props) => {
   return (
