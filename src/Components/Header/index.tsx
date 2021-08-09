@@ -4,22 +4,32 @@ import classes from "./header.module.scss";
 import { ReactComponent as Logo } from "../../assets/Logo.svg";
 import { Hamburger } from "../Hamburger";
 import { Menu } from "../Menu";
+import { useDispatch, useSelector } from "react-redux";
+import { AuthState, RootState } from "../../redux/type";
+import { logoutAction } from "../../redux/actions/authAction";
 
 export const Header = () => {
   const [menuActive, setMenuActive] = useState(false);
   const history = useHistory();
+  const state = useSelector<RootState, AuthState>((state) => state.auth);
+  const dispatch = useDispatch();
+  const setLogout = () => {
+    dispatch(logoutAction());
+    localStorage.removeItem("userData");
+  };
   return (
     <header className={classes.header}>
-      <Logo className={classes.logo} />
-      <div>
-        <NavLink
-          to={"/"}
-          exact={true}
+      <NavLink to={"/"} exact={true}>
+        <Logo className={classes.logo} />
+      </NavLink>
+
+      <div className={classes.header__menu}>
+        <a
+          href={"https://academy.profsoft.pro/"}
           className={classes.header__link}
-          activeClassName={classes.header__link__active}
         >
           Академия
-        </NavLink>
+        </a>
         <NavLink
           to={"/courses"}
           exact={true}
@@ -28,9 +38,14 @@ export const Header = () => {
         >
           Курсы
         </NavLink>
-        <NavLink to={"/login"} className={classes.header__link__entry}>
-          Войти
+        <NavLink
+          to={state.login ? "/" : "/login"}
+          className={classes.header__link__entry}
+          onClick={setLogout}
+        >
+          {state.login ? "Выйти" : "Войти"}
         </NavLink>
+
         <Hamburger />
       </div>
     </header>

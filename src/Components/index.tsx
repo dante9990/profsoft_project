@@ -1,6 +1,8 @@
-export { Counter } from "./otherProject/Counter/Counter";
-export { Table } from "./otherProject/Table/Table";
-export { Tree } from "./otherProject/Tree/Tree";
-export { Bar } from "./otherProject/Bar/index";
-export { CardComponent } from "./otherProject/Card/index";
 export { Wrapper } from "./Wrapper/index";
+export { School } from "./School/index";
+export { CertificateCom } from "./Certificate/index";
+export { Container } from "./Container/index";
+export { Information } from "./Information/index";
+export { Directions } from "./Directions/index";
+export { Login } from "./Login/index";
+export { Personal } from "./Personal/index";

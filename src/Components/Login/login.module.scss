@@ -1,0 +1,48 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  margin-top: 200px;
+  margin-bottom: 166px;
+  &__title {
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+    font-size: 48px;
+    text-transform: uppercase;
+  }
+  &__form {
+    display: flex;
+    width: 670px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 25px;
+  }
+  &__text {
+    color: #919191;
+    font-size: 16px;
+  }
+}
+
+.input {
+  width: 270px;
+  background-color: #1C1C1C;
+  padding: 20px 0 20px 20px;
+  border: 2px solid #898989;
+  border-radius: 42px;
+  margin: 0;
+  outline: none;
+}
+.input::placeholder {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.arrow {
+  width: 36px;
+  height: 21px;
+  background: url("../../assets/arrow-white.svg") no-repeat;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+}

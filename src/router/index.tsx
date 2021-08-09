@@ -9,13 +9,15 @@ import { Switch, Route, NavLink } from "react-router-dom";
 // import { CardPage } from "../Pages/Card";
 // import { routes } from "../service/routes";
 import { Landing } from "../Pages/Landing";
+import { LoginPage } from "../Pages/Login";
+import { PersonalPage } from "../Pages/Personal";
 
 export const Router = () => {
   return (
     <Switch>
       {/*<Route path={"/tree"} component={TreePage} exact={true} />*/}
       {/*<Route path={"/table"} component={TablePage} exact={true} />*/}
-      {/*<Route path={"/login"} component={Login} exact={true} />*/}
+      <Route path={"/login"} component={LoginPage} exact={true} />
       {/*  {routes.map(route => {*/}
       {/*      return <Route path={`/${route.path}`} component={route.Component} exact={true} key={route.id}/>*/}
       {/*  })}*/}
@@ -24,6 +26,7 @@ export const Router = () => {
       {/*<Route path={"/"} exact={true} component={Bar} />*/}
       <Route path={"/"} component={Landing} exact={true} />
       <Route path={"/courses"} component={Landing} exact={true} />
+      <Route path={"/personal"} component={PersonalPage} exact={true} />
     </Switch>
   );
 };
