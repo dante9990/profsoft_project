@@ -1,2 +1,2 @@
 export { authReducer } from "./authReducer";
-export { certReducer } from "./certReducer";
+export { certificateReducer } from "./certReducer";

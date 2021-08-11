@@ -6,78 +6,31 @@ export const Footer = () => {
   return (
     <footer className={classes.footer}>
       <div className={classes.footerLinks}>
-        <p className={classes.fistLinkInGroup}>
-          <Text
-            theme={"dark"}
-            color={"gold"}
-            type={"footer"}
-            text={"profsoft.pro"}
-          />
-        </p>
+        <Text type={"gold"} text={"profsoft.pro"} />
         <Text
-          theme={"dark"}
-          color={"gold"}
-          type={"footer"}
+          type={"gold"}
           text={"academy.profsoft.pro"}
+          url={"https://academy.profsoft.pro"}
         />
       </div>
 
       <div className={classes.footerLinks}>
-        <p className={`${classes.fistLinkInGroup} ${classes.vk}`}>
-          <Text
-            theme={"dark"}
-            color={"white"}
-            type={"footer"}
-            text={"vk.com"}
-            //url={"https://academy.profsoft.pro/"}
-          />
-        </p>
-
+        <Text type={"white"} text={"vk.com"} />
         <Text
-          theme={"dark"}
-          color={"white"}
-          type={"footer"}
+          type={"white"}
           text={"facebook.com"}
-          //url={"https://academy.profsoft.pro/"}
+          url={"https://facebook.com"}
         />
       </div>
 
       <div className={classes.footerLinks}>
-        <p className={classes.instagramLink}>
-          <Text
-            theme={"dark"}
-            color={"white"}
-            type={"footer"}
-            text={"instagram.com"}
-            //url={"https://academy.profsoft.pro/"}
-          />
-        </p>
-        <Text
-          theme={"dark"}
-          color={"white"}
-          type={"footer"}
-          text={"youtube.com"}
-          //url={"https://academy.profsoft.pro/"}
-        />
+        <Text type={"white"} text={"instagram.com"} />
+        <Text type={"white"} text={"youtube.com"} url={"https://youtube.com"} />
       </div>
 
       <div className={classes.footerLinks}>
-        <p className={`${classes.fistLinkInGroup} ${classes.vk}`}>
-          <Text
-            theme={"dark"}
-            color={"grey"}
-            type={"footer"}
-            text={"2021 © LLC Profsoft"}
-            //url={"https://academy.profsoft.pro/"}
-          />
-        </p>
-        <Text
-          theme={"dark"}
-          color={"grey"}
-          type={"footer"}
-          text={"Публичная оферта"}
-          //url={"https://academy.profsoft.pro/"}
-        />
+        <Text type={"grey"} text={"2021 © LLC ProfSoft"} />
+        <Text type={"grey"} text={"Публичная оферта"} />
       </div>
     </footer>
   );

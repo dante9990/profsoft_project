@@ -1,80 +1,135 @@
-.content h2 {
-  color: #1C1C1C;
-  font-size: 32px;
-  line-height: 34px;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
-  margin-top: 90px;
-  margin-bottom: 0;
-}
-
-.content p {
-  color: #1C1C1C;
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: -0.01em;
-}
-
-.inputBar .format {
-  width: 428px;
-  border: none;
-  font-size: 28px;
-  line-height: 46px;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: #1C1C1C;
-  border-radius: 42px;
-  margin-left: 25px;
-  outline: none;
-}
-
-.inputBar .format::placeholder {
-  color: #F3F5F6;
-}
-
-.inputBar {
-  border: 2px solid #1C1C1C;
-  border-radius: 42px;
+.openBlock {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  width: 574px;
-  height: 61px;
+  align-items: center;
+  padding-bottom: 35px;
 
-  margin-top: 40px;
-  margin-bottom: 90px;
-}
+  &__info {
+    width: 280px;
 
-.arrow {
-  margin-right: 25px;
-}
+    &__certificateTitle {
+      width: 100%;
+      margin-bottom: 100px;
 
-@media (max-width: 768px) {
-  .content {
-    padding: 35px 30px 20px 30px;
+      &__name {
+        margin-top: 22px;
+        width: 200px;
+      }
+    }
+
+    &__certificateInfo {
+      width: 100%;
+      margin-bottom: 22px;
+    }
+
+    &__certificatePeriod {
+      width: 100%;
+      margin-bottom: 22px;
+    }
+
+    &__certificateLearn {
+      width: 100%;
+    }
   }
 
-  .inputBar {
-    width: 315px;
-    height: 40px;
-    margin-top: 30px;
-    margin-bottom: 0;
-  }
+  &__card {
+    background-image: url('../../assets/profsoft.jpg');
+    background-repeat: no-repeat;
+    background-size: 135%;
+    background-position: left 55px top -170px;
+    width: 868px;
+    height: 464px;
+    border-radius: 12px;
+    position: relative;
 
-  .inputBar .format {
-    width: 200px;
-    height: 35px;
-  }
+    &__blackSquare {
+      width: 578px;
+      height: 464px;
+      left: 0px;
+      top: 0px;
+      position: absolute;
+      background: #292929;
+      border-radius: 18px;
 
-  .content h2 {
-    margin-top: 0px;
-    font-size: 22px;
-    line-height: 34px;
-  }
+      &__men {
+        right: -260px;
+        bottom: 0px;
+        position: absolute;
+      }
 
-  .content p {
-    margin-top: 5px;
-    font-size: 14px;
-    line-height: 20px;
+      &__blockInfo {
+        margin-top: 73px;
+        margin-left: 70px;
+
+        &__logo {
+          height: 15px;
+          margin-left: -30px;
+        }
+
+        &__certificate {
+          margin-top: 80px;
+          font-family: 'SF Pro Text';
+          font-style: normal;
+          font-weight: 300;
+          font-size: 11px;
+          letter-spacing: -0.01em;
+          color: #898989;
+        }
+
+        &__name {
+          margin-top: 10px;
+          font-family: 'SF Pro Text';
+          font-style: normal;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 22px;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+          color: #FFFFFF;
+          padding-bottom: 0;
+          margin-bottom: 0;
+        }
+
+        &__period {
+          font-family: 'SF Pro Text';
+          font-style: normal;
+          font-weight: 100;
+          font-size: 11px;
+          line-height: 15px;
+          letter-spacing: 0.035em;
+          color: #FFE924;
+          margin-top: 32px;
+        }
+
+        &__button {
+          margin-right: 10px;
+          padding: 3px 14px;
+          border: 1px solid #FFE924;
+          box-sizing: border-box;
+          border-radius: 42px;
+          background-color: transparent;
+          font-weight: normal;
+          font-size: 11px;
+          letter-spacing: -0.01em;
+          color: #FFE924;
+        }
+
+        &__director {
+          font-style: normal;
+          font-weight: 300;
+          font-size: 11px;
+          line-height: 15px;
+          letter-spacing: -0.01em;
+          color: #898989;
+          margin-top: 50px;
+        }
+
+        &__signature {
+          position: absolute;
+          bottom: 30px;
+          left: 210px;
+        }
+      }
+    }
   }
 }

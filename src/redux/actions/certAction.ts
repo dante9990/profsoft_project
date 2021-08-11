@@ -1,81 +1,88 @@
-export const GETCERT = "GETCERT";
-export const DELCERT = "DELETECERT";
-export const CHANGESHOW = "CHANGESHOW";
+export const GET_CERTIFICATE = "GET_CERTIFICATE";
+export const DELETE_CERTIFICATE = "DELETE_CERTIFICATE";
+export const CHANGE_CERTIFICATE_FLAG = "CHANGE_CERTIFICATE_FLAG";
 
-type Action = {
+export type Action = {
   type: string;
 };
 
-export type GetCertAction = {
-  id: number;
-  number: string;
-  fullName: any;
+export type CertificateAction = {
+  number: number;
+  fullName: string;
   direction: string;
-  dateFinish: string;
   dateStart: string;
-  features: any;
+  dateFinish: string;
+  features: Feature[];
   isShow: boolean;
 } & Action;
 
-type GetcertProps = {
+interface Feature {
   id: number;
-  number: string;
-  fullName: any;
+  name: string;
+}
+
+type CertificateProps = {
+  number: number;
+  fullName: string;
   direction: string;
-  dateFinish: string;
   dateStart: string;
-  features: any;
-  isShow: boolean;
+  dateFinish: string;
+  features: Feature[];
+  isShow?: boolean;
 };
 
-export const getCertAction = ({
-  id,
+export const getCertificateAction = ({
   number,
   fullName,
-  direction,
   dateFinish,
   dateStart,
+  direction,
   features,
-  isShow,
-}: GetcertProps) => {
+}: CertificateProps) => {
   return {
-    type: GETCERT,
-    id,
+    type: GET_CERTIFICATE,
     number,
     fullName,
-    direction,
     dateFinish,
     dateStart,
+    direction,
+    features,
+  };
+};
+
+export const changeFlagAction = ({
+  number,
+  fullName,
+  dateFinish,
+  dateStart,
+  direction,
+  features,
+  isShow,
+}: CertificateProps) => {
+  return {
+    type: CHANGE_CERTIFICATE_FLAG,
+    number,
+    fullName,
+    dateFinish,
+    dateStart,
+    direction,
     features,
     isShow,
   };
 };
 
-export const changeShowAction = ({
-  id,
-  number,
-  fullName,
-  direction,
-  dateFinish,
-  dateStart,
-  features,
-  isShow,
-}: GetcertProps) => {
+export const deleteCertificateAction = () => {
   return {
-    type: CHANGESHOW,
-    id,
-    number,
-    fullName,
-    direction,
-    dateFinish,
-    dateStart,
-    features,
-    isShow,
-  };
-};
-
-export const deleteCertAction = () => {
-  return {
-    type: DELCERT,
+    type: DELETE_CERTIFICATE,
+    number: 0,
+    fullName: "",
+    dateFinish: "",
+    dateStart: "",
+    direction: "",
+    features: [
+      { id: 0, name: "" },
+      { id: 1, name: "" },
+      { id: 2, name: "" },
+    ],
   };
 };

@@ -10,7 +10,12 @@ export const Personal = () => {
       <div className={classes.personal}>
         <div className={classes.personal__img} />
         <div className={classes.personal__info}>
-          <h1 className={classes.personal__name}>{state.name}</h1>
+          <div className={classes.personal__username}>
+            <p className={classes.personal__name}>{state.name[0]}</p>
+            <p className={classes.personal__name}>{state.name[1]}</p>
+            <p className={classes.personal__name}>{state.name[2]}</p>
+          </div>
+
           <p className={classes.personal__email}>{state.login}</p>
         </div>
       </div>

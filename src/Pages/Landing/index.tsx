@@ -1,21 +1,12 @@
 import React, { useContext, useEffect } from "react";
 
 import { Main } from "../../Layouts/Main";
-// import { Container } from "../../Components/index";
-// import { Wrapper } from "../../Components/Wrapper";
-// import { Information } from "../../Components/Information";
-// import { CertificateCom } from "../../Components/Certificate";
-// import { Directions } from "../../Components/Directions";
-import { useDispatch, useSelector } from "react-redux";
-import { AuthState, RootState } from "../../redux/type";
-import { loginAction, logoutAction } from "../../redux/actions/authAction";
-import { Button } from "@material-ui/core";
 import {
-  CertificateCom,
   Container,
   Directions,
   Information,
   Wrapper,
+  OpenBlock,
 } from "../../Components";
 
 export const Content = () => {
@@ -27,22 +18,6 @@ export const Content = () => {
 };
 
 export const Landing = () => {
-  const state = useSelector<RootState, AuthState>((state) => state.auth);
-  const dispatch = useDispatch();
-  const setLogin = () => {
-    const data = { login: "testLogin", name: "Petr", token: "testToken" };
-    dispatch(loginAction(data));
-    localStorage.setItem("userData", JSON.stringify(data));
-  };
-  const setLogout = () => {
-    dispatch(logoutAction());
-    localStorage.removeItem("userData");
-  };
-  // useEffect(()=> {
-  //     dispatch(
-  //         loginAction({login: 'testLogin', name: 'Petr', token: 'testToken'})
-  //     )
-  // }, [])
   return (
     <Main>
       <Wrapper theme={"dark"}>
@@ -52,7 +27,7 @@ export const Landing = () => {
       </Wrapper>
       <Wrapper theme={"light"}>
         <Container>
-          <CertificateCom />
+          <OpenBlock />
         </Container>
       </Wrapper>
       <Wrapper theme={"dark"}>

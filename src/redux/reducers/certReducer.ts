@@ -1,80 +1,75 @@
 import {
-  GetCertAction,
-  GETCERT,
-  DELCERT,
-  CHANGESHOW,
+  GET_CERTIFICATE,
+  DELETE_CERTIFICATE,
+  CertificateAction,
+  CHANGE_CERTIFICATE_FLAG,
 } from "../actions/certAction";
 
-const initialStateGet = {
-  id: "",
-  number: "",
+const initialState = {
+  number: 0,
   fullName: "",
-  direction: "",
   dateFinish: "",
   dateStart: "",
-  features: [],
+  direction: "",
+  features: [
+    { id: 0, name: "" },
+    { id: 1, name: "" },
+    { id: 2, name: "" },
+  ],
   isShow: false,
 };
-
-export const certReducer = (state = initialStateGet, action: GetCertAction) => {
+export const certificateReducer = (
+  state = initialState,
+  action: CertificateAction
+) => {
   switch (action.type) {
-    case GETCERT: {
-      const {
-        id,
-        number,
-        fullName,
-        direction,
-        dateFinish,
-        dateStart,
-        features,
-        isShow,
-      } = action;
+    case GET_CERTIFICATE: {
+      const { number, fullName, dateFinish, dateStart, direction, features } =
+        action;
       return {
         ...state,
-        id,
         number,
         fullName,
-        direction,
         dateFinish,
         dateStart,
+        direction,
         features,
-        isShow,
       };
     }
-    case CHANGESHOW: {
-      const {
-        id,
-        number,
-        fullName,
-        direction,
-        dateFinish,
-        dateStart,
-        features,
-        isShow,
-      } = action;
+    case DELETE_CERTIFICATE: {
       return {
         ...state,
-        id,
-        number,
-        fullName,
-        direction,
-        dateFinish,
-        dateStart,
-        features,
-        isShow: !state.isShow,
-      };
-    }
-    case DELCERT: {
-      return {
-        ...state,
-        id: "",
-        number: "",
+        number: 0,
         fullName: "",
-        direction: "",
         dateFinish: "",
         dateStart: "",
-        features: [],
-        isShow: false,
+        direction: "",
+        features: [
+          { id: 0, name: "" },
+          { id: 1, name: "" },
+          { id: 2, name: "" },
+        ],
+      };
+    }
+    case CHANGE_CERTIFICATE_FLAG: {
+      const {
+        number,
+        fullName,
+        dateFinish,
+        dateStart,
+        direction,
+        features,
+        isShow,
+      } = action;
+      return {
+        ...state,
+        number,
+        fullName,
+        dateFinish,
+        dateStart,
+        direction,
+        features,
+        isShow: !isShow,
       };
     }
     default: {

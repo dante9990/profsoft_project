@@ -1,6 +1,7 @@
 export type AuthState = {
+  id: number;
   login: string;
-  name: string;
+  name: any;
   token: string;
 };
 

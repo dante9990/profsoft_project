@@ -1,48 +1,59 @@
-.login {
-  display: flex;
-  flex-direction: column;
-  margin-top: 200px;
-  margin-bottom: 166px;
-  &__title {
-    padding: 0;
-    margin: 0;
-    font-weight: 600;
-    font-size: 48px;
-    text-transform: uppercase;
-  }
-  &__form {
-    display: flex;
-    width: 670px;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 40px;
-    margin-bottom: 25px;
-  }
-  &__text {
-    color: #919191;
-    font-size: 16px;
-  }
+.loginBlockContainer{
+  height: 60vh;
 }
 
-.input {
-  width: 270px;
-  background-color: #1C1C1C;
-  padding: 20px 0 20px 20px;
+.login_header{
+  padding-top: 100px;
+}
+.input{
+  width: 277px;
+  height: 61px;
+  background: transparent;
   border: 2px solid #898989;
   border-radius: 42px;
-  margin: 0;
+  font-size: 18px;
+  line-height: 46px;
   outline: none;
+  align-items: center;
+  padding: 0 20px 0 20px;
+  color: #F1F1F1;
+  caret-color:#FFE924;
 }
-.input::placeholder {
-  color: #ffffff;
-  text-transform: uppercase;
+.form_container{
+  width: 700px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.arrow {
-  width: 36px;
-  height: 21px;
-  background: url("../../assets/arrow-white.svg") no-repeat;
-  background-size: contain;
-  border: none;
-  cursor: pointer;
+.block_for_form{
+  margin-top: 50px;
+}
+
+.white_arr{
+  outline: none;
+  border: 0;
+  width: 39px;
+  height: 21.61px;
+  background: transparent url('../../assets/arrow-white.svg') no-repeat center;
+}
+.supportPar{
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #919191;
+  margin-bottom: 2px;
+}
+.whiteLink{
+  color: #FFFFFF;
+}
+
+.supportParContainer{
+  margin-top: 30px;
+}
+.innerSupportParCont{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 352px;
 }
