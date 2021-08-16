@@ -36,6 +36,12 @@ export const Header = (props: Props) => {
           >
             Академия
           </a>
+          <a
+            href={"https://www.profsoft.pro/"}
+            className={classes.header__linkProfsoft}
+          >
+            Компания
+          </a>
           <NavLink
             to={"/courses"}
             exact={true}

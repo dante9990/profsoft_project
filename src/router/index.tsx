@@ -8,7 +8,7 @@ import { ActionState } from "../types/auth";
 import { useSelector } from "react-redux";
 
 const ErrorComponent = () => {
-  return <div>Страницы не существует</div>;
+  return <div>not found</div>;
 };
 
 export const Router = () => {
