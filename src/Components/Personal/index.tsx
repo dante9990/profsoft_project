@@ -1,24 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
+import { RootState } from "../../redux/type";
+import { ActionState } from "../../types/auth";
+import { useDispatch, useSelector } from "react-redux";
 import classes from "./personal.module.scss";
-import { useSelector } from "react-redux";
-import { AuthState, RootState } from "../../redux/type";
+import { ReactComponent as UserPic } from "../../assets/userPic.svg";
 
 export const Personal = () => {
-  const state = useSelector<RootState, AuthState>((state) => state.auth);
+  const state = useSelector<RootState, ActionState>((state) => state.auth);
+
   return (
-    <>
-      <div className={classes.personal}>
-        <div className={classes.personal__img} />
-        <div className={classes.personal__info}>
-          <div className={classes.personal__username}>
-            <p className={classes.personal__name}>{state.name[0]}</p>
-            <p className={classes.personal__name}>{state.name[1]}</p>
-            <p className={classes.personal__name}>{state.name[2]}</p>
+    <div className={classes.userBlock}>
+      <div className={classes.userContainer}>
+        <UserPic className={classes.userPic} />
+        <div className={classes.userInfoContainer}>
+          <div className={classes.userNameContainer}>
+            <p className={`${classes.userName} ${classes.surname}`}>
+              {state.name[0]}
+            </p>
+            <p className={classes.userName}>{state.name[1]}</p>
           </div>
 
-          <p className={classes.personal__email}>{state.login}</p>
+          <p className={classes.userName}>{state.name[2]}</p>
+          <p className={classes.userLogin}>{state.login}</p>
         </div>
       </div>
-    </>
+    </div>
   );
 };

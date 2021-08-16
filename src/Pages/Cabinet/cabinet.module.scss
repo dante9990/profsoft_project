@@ -1,0 +1,22 @@
+.coursesHeader{
+  margin-top: 67px;
+
+}
+.coursesHeaderText{
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 34px;
+  text-transform: uppercase;
+  color: #1C1C1C;
+}
+
+@media (max-width: 600px){
+  .coursesHeader{
+    margin-top: 32px;
+
+  }
+  .coursesHeaderText{
+    font-size: 22px;
+    line-height: 34px;
+  }
+}

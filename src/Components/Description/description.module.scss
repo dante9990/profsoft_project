@@ -1,0 +1,105 @@
+.textPart{
+  border-bottom: 3px solid #898989;
+  margin-top: 95px;
+}
+
+.headerWhy{
+  margin-top: 66px;
+}
+.mainHeaderPadding{
+  margin-top: -28px;
+  margin-bottom: -7px;
+}
+.yellowButton{
+  margin-top: 59px;
+  margin-bottom: 130px;
+}
+
+.numbersBlock{
+  margin-top: 90px;
+  margin-bottom: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.numbersAndText{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.countDescription{
+  width: 184px;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: -21px;
+}
+.countBlock{
+  margin-right: 6px;
+}
+
+.textWhy{
+  max-width: 870px;
+}
+
+.descriptionHeader_1{
+  max-width: 400px;
+}
+.descriptionHeader_2{
+  margin-top: -16px;
+  max-width: 600px;
+}
+
+.descr_text_1{
+  margin-top: -7px;
+}
+.descr_text_2{
+  margin-top: -16px;
+}
+
+
+@media (max-width: 599px) {}
+.yellowButton{
+      margin-bottom: 60px;
+   }
+
+@media (min-width: 600px) {
+
+}
+
+
+@media (min-width: 900px) {
+  .yellowButton{
+    margin-top: 59px;
+    margin-bottom: 130px;
+  }
+}
+
+@media (min-width: 1200px) { }
+
+@media (max-width: 1300px) {
+  .numbersAndText{
+    margin-bottom: 70px;
+  }
+  .numbersBlock{
+
+    margin-bottom: 60px;
+  }
+}
+
+@media (min-width: 1800px) {}
+@media (max-width: 376px) {
+  .textWhy {
+
+  }
+  .headerWhy{
+    margin-top: 32px;
+  }
+  .numbersBlock{
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
+
+}
+

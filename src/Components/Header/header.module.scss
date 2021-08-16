@@ -1,16 +1,45 @@
 .header {
+  position: relative;
   padding-top: 36px;
   display: flex;
   justify-content: space-between;
+  height: 20vh;
 
-  &__link, &__link__entry {
+  &__linkProfsoft{
+    text-decoration: none;
     color: #898989;
     font-weight: 500;
+    margin-right: 37px;
     font-size: 22px;
-    margin-right: 32px;
+    line-height: 27px;
+    &:hover {
+      opacity: 0.5;
+      color: #898989;
+  }
+    &:active{
+      color: #FFE924;
+      font-weight: 500;
+      font-size: 22px;
+      margin-right: 32px;
 
+    }
+  }
+
+  &__link, &__link__entry {
+    text-decoration: none;
+    color: #898989;
+    font-weight: 500;
+    margin-right: 37px;
+    font-size: 22px;
+    line-height: 27px;
+    &:hover {
+      opacity: 0.5;
+      color: #898989;
+    }
     &__entry {
       color: #FFFFFF;
+    }
+    &:last-child{
       margin-right: 0;
     }
 
@@ -20,56 +49,149 @@
     font-weight: 500;
     font-size: 22px;
     margin-right: 32px;
+    &:hover {
+      color: #FFE924;
+    }
   }
+
 
 }
-
-.logo {
-  width: 256px;
-  height: 18px;
+.red {
+  opacity: 0.5;
+}
+.menu{
+display: none;
 }
 
-.burger__btn {
-  border: 1px solid red;
-  width: 30px;
-  height: 30px;
-  position: relative;
-  cursor: pointer;
-  & span {
-    content: '';
-    position: absolute;
-    top: 12px;
-    width: 30px;
-    height: 4px;
-    background-color: #fff;
-  }
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 30px;
-    height: 4px;
-    background-color: #fff;
-  }
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 30px;
-    height: 4px;
-    background-color: #fff;
-  }
+.cross{
+  position: absolute;
+  left:98%;
+  bottom: -11.5%;
 }
 
-@media (max-width: 375px) {
-  .header__link, .header__link__entry {
+.hide{
+  display: none;
+}
+
+@media (max-width: 376px) {
+  .cross {
     display: none;
   }
-  .logo {
-    width: 184px;
-    height: 14px;
+  .header {
+    padding-top: 19px;
+    height: 48px;
+
+    &__linkProfsoft{
+      display: none;
+      &:hover {
+        display: none;
+      }
+      &:active{
+        display: none;
+
+      }
+    }
+
+    &__link, &__link__entry {
+      display: none}
+
+    &__link__active {
+      display: none;
+    }
+
+  }
+  .logo{
+    max-width: 184.52px;
+    max-height: 14.21px;
+
+  }
+
+  .menu{
+    display: block;
+  }
+
+  }
+
+
+
+@media (max-width: 599px) { .cross {
+  display: none;
+}
+  .header {
+    padding-top: 19px;
+    height: 48px;
+
+    &__linkProfsoft{
+      display: none;
+      &:hover {
+        display: none;
+      }
+      &:active{
+        display: none;
+
+      }
+    }
+
+    &__link, &__link__entry {
+      display: none}
+
+    &__link__active {
+      display: none;
+    }
+
+  }
+  .logo{
+    width: 184.52px;
+    height: 14.21px;
+  }
+
+  .menu{
+    display: block;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+}
+
+
+@media (max-width: 900px) {
+  .logo{
+    max-width: 200.52px;
+    max-height: 18.21px;
+
   }
   .header {
-    padding: 19px 30px 0 30px;
-  }
+    &__linkProfsoft{
+
+      font-size: 20px;
+      margin-right: 20px;
+      &:active{
+
+        font-size: 20px;
+        margin-right: 20px;
+
+      }
+    }
+
+    &__link, &__link__entry {
+      margin-right: 25px;
+      font-size: 20px;
+    }
+    &__link__active {
+      font-size: 20px;
+      margin-right: 25px;
+
+    }}
 }
+
+@media (min-width: 1200px) { }
+
+@media (min-width: 1800px) { }
+
+
+
+
+

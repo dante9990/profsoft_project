@@ -1,17 +1,19 @@
 import React, { useEffect } from "react";
 import { Router } from "./router";
-import "./app.module.scss";
-import { loginAction } from "./redux/actions/authAction";
-import { AuthState } from "./redux/type";
+import "./app.css";
 import { useDispatch } from "react-redux";
+import { loginFunc } from "./redux/actions-create/authAction";
+import { ActionState, AuthType } from "./types/auth";
 
 export function App() {
   const dispatch = useDispatch();
+
   useEffect(() => {
     const jsonUserData = localStorage.getItem("userData");
     if (jsonUserData) {
-      const userData: AuthState = JSON.parse(jsonUserData);
-      dispatch(loginAction(userData));
+      const userData: ActionState = JSON.parse(jsonUserData);
+      loginFunc(userData);
+      dispatch({ type: AuthType.LOGIN, payload: userData });
     }
   }, []);
   return <Router />;

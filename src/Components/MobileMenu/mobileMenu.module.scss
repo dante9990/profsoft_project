@@ -1,0 +1,43 @@
+.menu{
+  display: none;
+  &__active{
+    overflow:hidden;
+    min-width: 100vw;
+    height: 100vh;
+  }
+}
+
+.menu_header{
+  display: flex;
+  justify-content: space-between ;
+
+}
+
+.blockForCross{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.menu_item{margin-bottom: 21px;}
+
+.content{
+ margin-top: 44px;
+}
+.menu_items{
+  margin-top: 63px;
+
+}
+
+.menu_footer{
+  margin-top: 56px;
+}
+
+.footer_item{
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: #898989;
+  margin-bottom: 22px;
+}
+

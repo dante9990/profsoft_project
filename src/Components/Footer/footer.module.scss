@@ -1,23 +1,38 @@
 .footer {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 49px;
-  margin-top: 58px;
-  &__item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+  align-content: center;
+  height: 20vh;
+
 }
-@media (max-width: 375px) {
+
+.footerLinks{
+  padding-top: 2%;
+  width: 276px;
+}
+@media (max-width: 600px) {
   .footer {
+    height: 270px;
     flex-direction: column;
-    padding: 0 30px 31px 30px;
-    &__item {
-      padding-bottom: 20px;
-      &:nth-child(2) {
-        padding-bottom: 0;
-      }
-    }
+    padding-bottom: 31px;
+  }
+
+  .footerLinks{
+    padding-top: 23px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  .fistLinkInGroup{
+
+    margin-bottom: -11px;
+  }
+  .instagramLink{
+    margin-top: -32px;
+    margin-bottom: -10px;
+  }
+  .vk{
+    margin-top: -15px;
   }
 }

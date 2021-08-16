@@ -1,112 +1,100 @@
-import React from "react";
 import classes from "./certificate.module.scss";
-import { ReactComponent as Men } from "../../assets/yellowMen.svg";
+import React, { useContext } from "react";
+import { ReactComponent as CertBack } from "../../assets/certBack.svg";
+import { ReactComponent as Chel } from "../../assets/chel.svg";
 import { ReactComponent as Logo } from "../../assets/Logo.svg";
-import { ReactComponent as Signature } from "../../assets/signature.svg";
+import { ReactComponent as Sign } from "../../assets/sign.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { RootStateCertificate } from "../../redux/type";
+import { CertificateState } from "../../types/cert";
+import { CertificateForm } from "../CertificateForm";
 
-export const Certificate = (
-  fullName: any,
-  dateStart: string,
-  dateFinish: string,
-  number: number,
-  direction: string,
-  features: any
-) => {
+export const CertificateContent = () => {
+  const state = useSelector<RootStateCertificate, CertificateState>(
+    (state) => state.cert
+  );
+  const dispatch = useDispatch();
+
   return (
     <>
-      <div className={classes.openBlock}>
-        <div className={classes.openBlock__info}>
-          <div className={classes.openBlock__info__certificateTitle}>
-            <p className={classes.greyLightText}>Сертификат</p>
-            <p className={classes.blackText}>№ {number}</p>
-            <div className={classes.openBlock__info__certificateTitle__name}>
-              <p className={classes.blackText}>{fullName}</p>
+      {state.isShow ? (
+        <>
+          <div className={classes.studentContainer}>
+            <CertificateForm
+              id={state.id}
+              number={state.number}
+              fullName={state.fullName}
+              direction={state.direction}
+              dateStart={state.dateStart}
+              dateFinish={state.dateFinish}
+              features={state.features}
+              isShow={state.isShow}
+              in_progress={state.in_progress}
+            />
+          </div>
+          <div className={classes.pictureCont}>
+            <CertBack className={classes.certBack} />
+            <Chel className={classes.chel} />
+            <div className={classes.certContainer}>
+              <Logo className={classes.logo} />
+              <div className={classes.certInfo}>
+                <p className={`${classes.mainText} ${classes.mainText__white}`}>
+                  Сертификат
+                  <br />о прохождении обучения
+                </p>
+                <div className={classes.userBox}>
+                  <p
+                    className={`${classes.mainText__white} ${classes.userText}`}
+                  >
+                    {state.fullName[0]} {state.fullName[1]} {state.fullName[2]}
+                  </p>
+                </div>
+              </div>
+              <div className={classes.yellowBlock}>
+                <p
+                  className={`${classes.mainText} ${classes.mainText__yellow} ${classes.yellowText}`}
+                >
+                  Направление подготовки {state.direction}
+                </p>
+                <p
+                  className={`${classes.mainText} ${classes.mainText__yellow}`}
+                >
+                  период обучения {state.dateStart}-{state.dateFinish}
+                </p>
+                <div className={classes.yellowButtonsBlock}>
+                  {state.features.map((feature: any) => (
+                    <button
+                      key={feature.id}
+                      className={`${classes.yellowFeatures} ${classes.mainText} ${classes.mainText__yellow}`}
+                    >
+                      {feature.name}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div className={classes.companyInfo}>
+                <div className={classes.signBlock}>
+                  <div className={classes.directorInfo}>
+                    <p
+                      className={`${classes.mainText} ${classes.mainText__grey} ${classes.yellowText}`}
+                    >
+                      Директор ООО ProfSoft
+                    </p>
+                    <p
+                      className={`${classes.mainText} ${classes.mainText__grey}`}
+                    >
+                      Каплин К.О.
+                    </p>
+                  </div>
+                  <div className={classes.signWithBlock}>
+                    <Sign className={classes.sign} />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div className={classes.openBlock__info__certificateInfo}>
-            <p className={classes.greyLightText}>Направление подготовки: </p>
-            <p className={classes.blackText}>{direction}</p>
-          </div>
-          <div className={classes.openBlock__info__certificatePeriod}>
-            <p className={classes.greyLightText}>Период обучения: </p>
-            <p className={classes.blackText}>
-              {dateStart}-{dateFinish}
-            </p>
-          </div>
-          <div className={classes.openBlock__info__certificateLearn}>
-            <p className={classes.greyLightText}>Изучено: </p>
-            {/*<p className={classes.blackText}>{features[0].name}; </p>*/}
-            {/*<p className={classes.blackText}>{features[1].name}; </p>*/}
-          </div>
-        </div>
-        <div className={classes.openBlock__card}>
-          <div className={classes.openBlock__card__blackSquare}>
-            <Men className={classes.openBlock__card__blackSquare__men} />
-            <div className={classes.openBlock__card__blackSquare__blockInfo}>
-              <Logo
-                className={
-                  classes.openBlock__card__blackSquare__blockInfo__logo
-                }
-              />
-              <p
-                className={
-                  classes.openBlock__card__blackSquare__blockInfo__certificate
-                }
-              >
-                Сертификат <br /> о прохождении обучения
-              </p>
-              <p
-                className={
-                  classes.openBlock__card__blackSquare__blockInfo__name
-                }
-              >
-                {fullName}
-              </p>
-              <hr
-                style={{
-                  margin: "2px 0",
-                  border: "0.361751px solid #FFFFFF",
-                }}
-              />
-              <p
-                className={
-                  classes.openBlock__card__blackSquare__blockInfo__period
-                }
-              >
-                Направление подготовки {direction} <br />
-                период обучения {dateStart}-{dateFinish}
-              </p>
-              <button
-                className={
-                  classes.openBlock__card__blackSquare__blockInfo__button
-                }
-              >
-                Figma
-              </button>
-              <button
-                className={
-                  classes.openBlock__card__blackSquare__blockInfo__button
-                }
-              >
-                UXPIN
-              </button>
-              <p
-                className={
-                  classes.openBlock__card__blackSquare__blockInfo__director
-                }
-              >
-                Директор ООО ProfSoft <br /> Каплин К.О.
-              </p>
-              <Signature
-                className={
-                  classes.openBlock__card__blackSquare__blockInfo__signature
-                }
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <p className={classes.link}>поделиться</p>
+        </>
+      ) : null}
     </>
   );
 };

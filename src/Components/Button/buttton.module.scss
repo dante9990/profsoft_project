@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'Golos Text';
+  src: local('Golos Text Medium'), local('GolosText-Medium'), url('fonts/Golostextmedium.woff2') format('woff2'), url('fonts/Golostextmedium.woff') format('woff'), url('fonts/Golostextmedium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+* {
+  font-family: "Golos Text";
+}
+
+.button{
+  &__yellow{
+    width: 298px;
+    height: 61px;
+    background: #FFE924;
+    border-radius: 42px;
+    color: #1C1C1C;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 46px;
+    align-items: center;
+    text-transform: uppercase;
+    text-align: center;
+    border:none;
+    outline:none;
+  }
+
+  &__emptyGrey{
+    width: 277px;
+    height: 61px;
+    border: 2px solid #898989;
+    box-sizing: border-box;
+    border-radius: 42px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 46px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: #F1F1F1;
+  }
+  &__yellow_disabled{
+    background: #DECE3A;
+    color: #1C1C1C;
+  }
+  &__grey_disabled{
+    background: #DECE3A;
+    color: #1C1C1C;
+  }
+
+}
+
+@media (max-width: 376px) {
+  .button{
+    &__yellow{
+      width: 196px;
+      height: 40px;
+      font-size: 12.0201px;
+      line-height: 30px;
+  }
+
+
+}}
+
+@media (min-width: 377px) {
+  .button{
+    &__yellow{
+      width: 250px;
+      height: 50px;
+      font-size: 14px;
+      line-height: 30px;
+    }
+
+
+  }}
+
+@media (min-width: 900px) {
+  .button{
+    &__yellow{
+      width: 298px;
+      height: 61px;
+      font-size: 18px;
+      line-height: 46px;
+    }
+
+
+  }}

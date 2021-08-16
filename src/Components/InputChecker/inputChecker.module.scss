@@ -1,0 +1,203 @@
+.certificate{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.certHeader{
+  margin-top:56px;
+}
+.descriptionText{
+  margin-top: -18px;
+}
+.inputForm{
+  color: #1C1C1C;
+  margin-top: 20px;
+  width: 574px;
+  height: 61px;
+  border: 2px solid #1C1C1C;
+  box-sizing: border-box;
+  border-radius: 42px;
+  outline: none;
+  padding: 0 28px;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 46px;
+
+}
+
+.inputForm::-webkit-input-placeholder {
+  color: #F1F1F1
+}
+.inputForm:-moz-placeholder{
+  color: #F1F1F1
+}
+
+.arr{
+  width: 574px;
+  position: relative;
+  margin-bottom: 52px;
+}
+.wh_arrow{
+  outline: none;
+  border: 0;
+  width: 38.61px;
+  height: 23.61px;
+  background: transparent url('../../assets/arrow.svg') no-repeat center;
+  position: absolute;
+
+}
+.black_arrow{
+  outline: none;
+  border: 0;
+  width: 38.61px;
+  height: 23.61px;
+  background: transparent url('../../assets/black_arrow.svg') no-repeat center;
+  position: absolute;
+
+}
+.retry{
+  outline: none;
+  border: 0;
+  width: 38.61px;
+  height: 23.61px;
+  background: transparent url('../../assets/retry.svg') no-repeat center;
+  position: absolute;
+
+}
+
+.certInfo{
+  margin-top: 94px;
+  margin-bottom: 141px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.inputEl{
+
+}
+
+@media (max-width: 376px) {
+
+  .inputForm {
+    width: 250px;
+    height: 33px;
+    font-size: 15px;
+    line-height: 46px;
+
+  }
+  .arr{
+    margin-top: -7px;
+    width: 250px;
+    position: relative;
+  }
+  .wh_arrow, .black_arrow, .retry{
+    width: 53px;
+    height: 15px;
+    right: 20px;
+    top: 28px;
+  }
+
+  certInfo{
+
+  }
+
+}
+
+
+
+@media (min-width: 376px) {
+
+  .inputForm {
+    width: 315px;
+    height: 40px;
+    font-size: 22px;
+    line-height: 46px;
+
+  }
+  .arr{
+    margin-top: -7px;
+    width: 315px;
+    position: relative;
+  }
+  .wh_arrow, .black_arrow, .retry{
+    right: 15px;
+    top: 29px;
+  }
+
+  certInfo{
+
+  }
+
+}
+@media (min-width: 377px) {
+  .inputForm {
+    width: 315px;
+    height: 40px;
+    font-size: 22px;
+    line-height: 46px;
+    margin-bottom: 40px;
+  }
+  .arr{
+    margin-top: -7px;
+    width: 315px;
+    position: relative;
+  }
+  .wh_arrow, .black_arrow, .retry{
+    right: 15px;
+    top: 29px;
+  }
+
+}
+
+@media (min-width: 600px) {
+  .inputForm {
+    width: 420px;
+    height: 55px;
+    font-size: 22px;
+    line-height: 46px;
+    margin-bottom: 40px;
+  }
+  .arr{
+    margin-top: -7px;
+    width: 420px;
+    position: relative;
+  }
+  .wh_arrow, .black_arrow, .retry{
+    right: 15px;
+    top: 37px;
+  }
+
+}
+
+@media (min-width: 900px) {
+  .inputForm {
+    width: 574px;
+    height: 61px;
+    font-size: 28px;
+    line-height: 46px;
+    margin-bottom: 40px;
+  }
+  .arr{
+    margin-top: -7px;
+    width: 574px;
+    position: relative;
+  }
+  .wh_arrow, .black_arrow, .retry{
+    right: 19px;
+    top: 40px;
+  }
+
+}
+
+@media screen and (min-width:900px) and (max-width:950px) {
+  .certInfo{
+    margin-bottom: 40px;
+  }
+
+}
+
+@media screen and (min-width:950px) and (max-width:1300px) {
+  .certInfo{
+    margin-top: -10px;
+  }
+}

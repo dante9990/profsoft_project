@@ -1,23 +1,8 @@
-export type AuthState = {
-  id: number;
-  login: string;
-  name: any;
-  token: string;
-};
+import { ActionState } from "../types/auth";
+import { CertificateState } from "../types/cert";
 
 export type RootState = {
-  auth: AuthState;
-};
-
-export type CertificateState = {
-  id: number;
-  number: string;
-  fullName: any;
-  direction: string;
-  dateFinish: string;
-  dateStart: string;
-  features: any;
-  isShow: boolean;
+  auth: ActionState;
 };
 
 export type RootStateCertificate = {

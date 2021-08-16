@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Golos Text';
+    src: local('Golos Text Medium'), local('GolosText-Medium'), url('fonts/Golostextmedium.woff2') format('woff2'), url('fonts/Golostextmedium.woff') format('woff'), url('fonts/Golostextmedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}

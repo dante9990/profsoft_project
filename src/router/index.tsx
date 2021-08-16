@@ -1,32 +1,27 @@
 import React from "react";
-import { Switch, Route, NavLink } from "react-router-dom";
-// import { Bar, Tree } from "../Components";
-// import classes from "./app.module.scss";
-// import { TablePage } from "../Pages/Table";
-// import { Login } from "../Pages/Login";
-// import { CounterPage } from "../Pages/Counter";
-// import { TreePage } from "../Pages/Tree";
-// import { CardPage } from "../Pages/Card";
-// import { routes } from "../service/routes";
+import { Route, Switch } from "react-router-dom";
 import { Landing } from "../Pages/Landing";
-import { LoginPage } from "../Pages/Login";
-import { PersonalPage } from "../Pages/Personal";
+import { Login } from "../Pages/Login";
+import { Cabinet } from "../Pages/Cabinet";
+import { RootState } from "../redux/type";
+import { ActionState } from "../types/auth";
+import { useSelector } from "react-redux";
+
+const ErrorComponent = () => {
+  return <div>Страницы не существует</div>;
+};
 
 export const Router = () => {
+  const state = useSelector<RootState, ActionState>((state) => state.auth);
+
   return (
     <Switch>
-      {/*<Route path={"/tree"} component={TreePage} exact={true} />*/}
-      {/*<Route path={"/table"} component={TablePage} exact={true} />*/}
-      <Route path={"/login"} component={LoginPage} exact={true} />
-      {/*  {routes.map(route => {*/}
-      {/*      return <Route path={`/${route.path}`} component={route.Component} exact={true} key={route.id}/>*/}
-      {/*  })}*/}
-      {/*<Route path={"/counter"} component={CounterPage} exact={true} />*/}
-      {/*<Route path={"/card"} component={CardPage} exact={true} />*/}
-      {/*<Route path={"/"} exact={true} component={Bar} />*/}
       <Route path={"/"} component={Landing} exact={true} />
-      <Route path={"/courses"} component={Landing} exact={true} />
-      <Route path={"/personal"} component={PersonalPage} exact={true} />
+      {state.token ? (
+        <Route path={"/personal"} component={Cabinet} exact={true} />
+      ) : null}
+      <Route path={"/login"} component={Login} exact={true} />
+      <Route component={ErrorComponent} />
     </Switch>
   );
 };

@@ -1,33 +1,22 @@
-import React, { useContext, useEffect } from "react";
-
+import React from "react";
 import { Main } from "../../Layouts/Main";
-import {
-  Container,
-  Directions,
-  Information,
-  Wrapper,
-  OpenBlock,
-} from "../../Components";
-
-export const Content = () => {
-  return (
-    <div>
-      <h1>В команду твоей мечты</h1>
-    </div>
-  );
-};
+import { Container } from "../../Components/Container";
+import { Wrapper } from "../../Components/Wrapper";
+import { Description } from "../../Components/Description";
+import { InputChecker } from "../../Components/InputChecker";
+import { Directions } from "../../Components/Directions";
 
 export const Landing = () => {
   return (
     <Main>
       <Wrapper theme={"dark"}>
         <Container>
-          <Information />
+          <Description />
         </Container>
       </Wrapper>
       <Wrapper theme={"light"}>
         <Container>
-          <OpenBlock />
+          <InputChecker />
         </Container>
       </Wrapper>
       <Wrapper theme={"dark"}>
@@ -35,15 +24,6 @@ export const Landing = () => {
           <Directions />
         </Container>
       </Wrapper>
-      {/*  <Button onClick={setLogin}>Auth</Button>*/}
-      {/*  <Button onClick={setLogout}>Exit</Button>*/}
-      {/*  <>*/}
-      {/*{state.name ? (*/}
-      {/*  <p style={{ color: "#000" }}>Вас зовут: {state.login}</p>*/}
-      {/*) : (*/}
-      {/*  <p>вы не авторизованы</p>*/}
-      {/*)}*/}
-      {/*  </>*/}
     </Main>
   );
 };

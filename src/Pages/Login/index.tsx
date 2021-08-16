@@ -1,15 +1,19 @@
 import React from "react";
-import { Container, Login, Wrapper } from "../../Components";
 import { Main } from "../../Layouts/Main";
-
-export const LoginPage = () => {
+import { Wrapper } from "../../Components/Wrapper";
+import { Container } from "../../Components/Container";
+import { LoginCom } from "../../Components/Login";
+import classes from "./login.module.scss";
+export const Login = () => {
   return (
-    <Main>
-      <Wrapper theme={"dark"}>
-        <Container>
-          <Login />
-        </Container>
-      </Wrapper>
-    </Main>
+    <div className={classes.block}>
+      <Main>
+        <Wrapper theme={"dark"}>
+          <Container>
+            <LoginCom />
+          </Container>
+        </Wrapper>
+      </Main>
+    </div>
   );
 };
