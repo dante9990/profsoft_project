@@ -5,7 +5,7 @@ import { useFormik } from "formik";
 import { Redirect } from "react-router-dom";
 import { RootState } from "../../redux/type";
 import { ActionState } from "../../types/auth";
-import { loginFunc, logout } from "../../redux/actions-create/authAction";
+import { loginFunc } from "../../redux/actions-create/authAction";
 import { useDispatch, useSelector } from "react-redux";
 import { users } from "../../redux/data";
 

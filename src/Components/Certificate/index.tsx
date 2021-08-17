@@ -9,7 +9,7 @@ import { RootStateCertificate } from "../../redux/type";
 import { CertificateState } from "../../types/cert";
 import { CertificateForm } from "../CertificateForm";
 
-export const CertificateContent = () => {
+export const CertificateComponent = () => {
   const state = useSelector<RootStateCertificate, CertificateState>(
     (state) => state.cert
   );

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Text } from "../Text";
 import NumberFormat from "react-number-format";
 import { Element } from "react-scroll";
-import { CertificateContent } from "../Certificate/index";
+import { CertificateComponent } from "../Certificate/index";
 import { RootStateCertificate } from "../../redux/type";
 import {
   changeShow,
@@ -128,7 +128,7 @@ export const InputChecker = () => {
       </form>
       {inputActive && buttonChecker ? (
         <div className={classes.certInfo}>
-          <CertificateContent />
+          <CertificateComponent />
         </div>
       ) : null}
     </div>
