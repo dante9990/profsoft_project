@@ -1,0 +1,129 @@
+*{
+  z-index: 1;
+}
+
+.coursesTitle{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 55px;
+  line-height: 69px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.coursesTitle span{
+  color: #FFE924;
+
+}
+
+.trainingInfo{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 27px;
+  letter-spacing: -0.01em;
+  color: #898989;
+}
+
+.selectBar{
+  display: flex;
+  align-items: start;
+  margin-bottom: 60px;
+}
+
+button {
+  background: none;
+  border: none;
+
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+.activeSelectBlock{
+  border: 2px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 42px;
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+  justify-content: space-around;
+  z-index: 2;
+  background-color: #1c1c1c;
+  width: 260px;
+}
+
+.additionalInformation{
+  background: #FFFFFF;
+  border-radius: 0px 30px 30px 30px;
+  width: 260px;
+
+}
+
+.containerBlock{
+  position: relative;
+}
+
+.additionalInformation p{
+  margin: 0;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 40px;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #1C1C1C;
+  padding-left: 20px;
+}
+
+.additionalInformation p:hover{
+  cursor: pointer;
+}
+
+.rectangle{
+  background: #FFFFFF;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 30px;
+  height: 40px;
+  z-index: -2;
+}
+
+.selectBlock{
+  border: 2px solid #898989;
+  box-sizing: border-box;
+  border-radius: 42px;
+  background-color: #1c1c1c;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-right: 50px;
+  width: 260px;
+}
+
+.selectInfo{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #F1F1F1;
+  z-index: 2;
+}
+
+.activeSelect{
+  transform: rotate(180deg);
+}
+
+.arrow{
+  margin-top: 15px;
+}
+
+.CardImage{
+  width: 571px;
+  height: 301px;
+  background-color: #1c1c1c;
+}
