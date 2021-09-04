@@ -1,0 +1,126 @@
+.containerBlock{
+  //margin-bottom: 47px;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('../../../fonts/SFProDisplay-Medium.eot');
+  src: local('SF Pro Display Medium'), local('SFProDisplay-Medium'),
+  url('../../../fonts/SFProDisplay-Medium.eot?#iefix') format('embedded-opentype'),
+  url('../../../fonts/SFProDisplay-Medium.woff2') format('woff2'),
+  url('../../../fonts/SFProDisplay-Medium.woff') format('woff'),
+  url('../../../fonts/SFProDisplay-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+.secondItems{
+  margin-top: -16px;
+  font-size: 18px;
+  line-height: 25px;
+}
+.itemHeader{
+  font-size: 18px;
+  line-height: 25px;
+  &__greyHeader{
+    color: #898989;
+    font-size: 18px;
+    line-height: 25px;
+  }}
+
+.cardHolder{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 82px;
+  border-bottom: 3px solid #F1F1F1;
+}
+
+.courseDescr{
+  margin-bottom: 85px;
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.select_items{
+
+}
+.studied{
+  width: 50%;
+  margin-top: -125px;
+}
+.rightBlock{
+  margin-right: -50px;
+}
+
+@media (max-width:900px){
+  .select_items{
+    width: 100%;
+  }
+  .studied{
+    margin-top: 0px;
+    width: 100%;
+  }
+
+  .cardHolder{
+    margin-top: 35px;
+  }
+  .courseDescr{
+    margin-bottom: 35px;
+  }
+  .picture{
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (min-width:1200px) and (max-width:1300px) {
+  .pic{
+    width: 500px;
+  }
+  .studied{
+    margin-top: 0px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width:900px) and (max-width:1200px) {
+  .studied{
+    margin-top: 0px;
+    width: 100%;
+  }
+  .pic{
+    width: 100%
+  }
+  .picture{
+    margin-top: 0px;
+    width:450px;
+  }
+}
+
+@media (max-width: 660px) {
+  .pic{
+    width: 315px;
+    height: 166px;
+  }
+  .secondItems{
+    font-size: 13px;
+    line-height: 19px;
+  }
+  .itemHeader{
+    font-size: 13px;
+    line-height: 19px;
+    &__greyHeader{
+      font-size: 13px;
+      line-height: 19px;
+    }
+
+}}
+
+@media (max-width: 350px) {
+  .pic{
+    width: 250px;
+    margin-left: 10px;
+  }
+}

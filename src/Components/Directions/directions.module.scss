@@ -1,7 +1,5 @@
 .directionsArea{
-  min-height: 923px;
-  //flex-wrap: wrap;
-  //display: flex;
+  margin-bottom: 120px;
 }
 
 .directions_header{
@@ -15,6 +13,7 @@
 }
 
 .whiteArrow{
+  cursor: pointer;
   margin-left: 30px;
 }
 
@@ -25,6 +24,7 @@
 }
 .root{
   margin-top: 50px;
+  margin-bottom: 30px;
   flex-wrap: wrap;
 display: flex;
   justify-content: space-between;
@@ -46,7 +46,7 @@ display: flex;
 
 @media (max-width: 580px) {
   .directionsArea{
-    min-height: 905px;
+    margin-bottom: 18px;
     border-bottom: 2px solid #898989;;
   }
   .cross {
@@ -87,7 +87,6 @@ display: flex;
 
 @media (min-width: 800px) {
   .papers{
-
     max-width: 270px;
     height: 270px;
     background: #292929;
@@ -105,4 +104,16 @@ display: flex;
     margin-bottom: 11px;
   }
 
+}
+
+@media (max-width: 650px){
+  .cross{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 581px) and (max-width: 600px){
+  .directionsArea{
+    margin-bottom: 0px;
+  }
 }

@@ -2,8 +2,13 @@ import React from "react";
 import { Container } from "../Container";
 import { Header } from "../Header";
 import classes from "./mobileMenu.module.scss";
-import { ReactComponent as MenuCross } from "../../assets/menuCross.svg";
+import { ReactComponent as MenuCross } from "../../assets/arrows crosses and other/menuCross.svg";
 import { Text } from "../Text";
+import { NavLink } from "react-router-dom";
+import { RootState } from "../../redux/type";
+import { ActionState } from "../../types/auth";
+import { logout } from "../../redux/actions-create/authAction";
+import { useDispatch, useSelector } from "react-redux";
 
 export interface Props {
   active: boolean;
@@ -11,6 +16,18 @@ export interface Props {
 }
 
 export const Menu = (props: Props) => {
+  const stateUser = useSelector<RootState, ActionState>((state) => state.auth);
+
+  const dispatch = useDispatch();
+
+  const setLogout = () => {
+    dispatch(logout());
+  };
+
+  const raise = () => {
+    console.log("делаем raise" + `${stateUser.name}`);
+  };
+
   return (
     <div className={props.active ? classes.menu__active : classes.menu}>
       <Container>
@@ -29,19 +46,46 @@ export const Menu = (props: Props) => {
           </div>
           <div className={classes.menu_items}>
             <p className={classes.menu_item}>
-              <Text theme={"light"} type={"numbersText"} text={"Академия"} />
+              <a href={"https://profsoft.pro/"} target="_blank">
+                {" "}
+                <Text theme={"light"} type={"numbersText"} text={"Компания"} />
+              </a>
             </p>
             <p className={classes.menu_item}>
-              <Text theme={"light"} type={"numbersText"} text={"Курсы"} />
+              <a href={"https://academy.profsoft.pro/"} target="_blank">
+                <Text theme={"light"} type={"numbersText"} text={"Академия"} />
+              </a>
+            </p>
+            <p className={classes.menu_item}>
+              <NavLink to={"/courses"} exact={true}>
+                <Text theme={"light"} type={"numbersText"} text={"Курсы"} />
+              </NavLink>
             </p>
             <p>
-              <Text theme={"light"} type={"numbersText"} text={"Войти"} />
+              <NavLink
+                to={stateUser.login ? "/" : "/login"}
+                onClick={stateUser.login ? setLogout : raise}
+              >
+                <Text
+                  theme={"light"}
+                  type={"numbersText"}
+                  text={stateUser.login ? "Выйти" : "Войти"}
+                />
+              </NavLink>
             </p>
           </div>
         </div>
         <div className={classes.menu_footer}>
-          <p className={`${classes.footer_item} `}>profsoft.pro</p>
-          <p className={classes.footer_item}>academy.profsoft.pro</p>
+          <a className={`${classes.footer_item}`} href="https://profsoft.pro/">
+            profsoft.pro
+          </a>
+
+          <a
+            className={classes.footer_item}
+            href={"https://academy.profsoft.pro/"}
+          >
+            academy.profsoft.pro
+          </a>
         </div>
       </Container>
     </div>

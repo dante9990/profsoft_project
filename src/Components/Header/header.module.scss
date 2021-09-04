@@ -106,38 +106,16 @@ display: none;
 
   }
 
-  .menu{
-    display: block;
+
+
   }
 
-  }
 
 
-
-@media (max-width: 599px) { .cross {
-  display: none;
-}
+@media (max-width: 599px) {
   .header {
     padding-top: 19px;
     height: 48px;
-
-    &__linkProfsoft{
-      display: none;
-      &:hover {
-        display: none;
-      }
-      &:active{
-        display: none;
-
-      }
-    }
-
-    &__link, &__link__entry {
-      display: none}
-
-    &__link__active {
-      display: none;
-    }
 
   }
   .logo{
@@ -145,16 +123,10 @@ display: none;
     height: 14.21px;
   }
 
-  .menu{
-    display: block;
-  }
 
 }
 
 
-@media (max-width: 600px) {
-
-}
 
 
 @media (max-width: 900px) {
@@ -164,30 +136,51 @@ display: none;
 
   }
   .header {
-    &__linkProfsoft{
+    &__linkProfsoft {
+      display: none;
 
-      font-size: 20px;
-      margin-right: 20px;
-      &:active{
+      &:hover {
+        display: none;
+      }
 
-        font-size: 20px;
-        margin-right: 20px;
+      &:active {
+        display: none;
 
       }
     }
 
     &__link, &__link__entry {
-      margin-right: 25px;
-      font-size: 20px;
+      display: none
     }
-    &__link__active {
-      font-size: 20px;
-      margin-right: 25px;
 
-    }}
+    &__link__active {
+      display: none;
+    }
+  }
+  .cross {
+    display: none;
+  }
 }
 
-@media (min-width: 1200px) { }
+@media (max-width: 901px) {
+  .menu{
+    display: block;
+  }
+}
+
+@media screen and (min-width:581px) and (max-width:901px) {
+  .menu{
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+@media (max-width: 581px) {
+  .menu{
+    margin-top: 8px;
+  }
+}
 
 @media (min-width: 1800px) { }
 

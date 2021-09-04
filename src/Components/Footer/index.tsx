@@ -6,20 +6,24 @@ export const Footer = () => {
   return (
     <footer className={classes.footer}>
       <div className={classes.footerLinks}>
-        <p className={classes.fistLinkInGroup}>
+        <p className={`${classes.fistLinkInGroup} ${classes.profsoftLink}`}>
           <Text
             theme={"dark"}
             color={"gold"}
             type={"footer"}
             text={"profsoft.pro"}
+            url={"https://profsoft.pro/"}
           />
         </p>
-        <Text
-          theme={"dark"}
-          color={"gold"}
-          type={"footer"}
-          text={"academy.profsoft.pro"}
-        />
+        <p>
+          <Text
+            theme={"dark"}
+            color={"gold"}
+            type={"footer"}
+            text={"academy.profsoft.pro"}
+            url={"https://academy.profsoft.pro/"}
+          />
+        </p>
       </div>
 
       <div className={classes.footerLinks}>

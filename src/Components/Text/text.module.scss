@@ -7,7 +7,13 @@
 * {
   font-family: 'Golos Text';
 }
+.urlHover{
 
+  &:hover {
+    opacity: 0.5;
+    color: #898989;
+  }
+}
 .text {
   &__gold{
     color: #FFE924;
@@ -67,6 +73,9 @@
     font-size: 90px;
     line-height: 34px;
     text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
   }
 
   &__text_for_numbers{
@@ -80,7 +89,7 @@
   &__greyText_under_main_header{
     font-style: normal;
     font-weight: 500;
-
+    color: #898989;
   }
   &__inputText{
     font-style: normal;
@@ -293,6 +302,13 @@
 
 }}
 
-@media (min-width: 1300px) { }
-
-@media (min-width: 1800px) { }
+//@media (max-width: 600px) {
+//
+//  .urlHover{
+//    padding-top: 23px;
+//  }
+//  .fistLinkInGroup{
+//
+//    margin-bottom: -11px;
+//  }
+//}

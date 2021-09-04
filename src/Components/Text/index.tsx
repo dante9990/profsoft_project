@@ -56,12 +56,28 @@ export const Text: FC<Props> = ({ theme, color, type, text, url }: Props) => {
         return classes.text__inputText;
     }
   };
+  const handleColor = (t: string | undefined) => {
+    switch (t) {
+      case "grey":
+        return classes.text__grey;
+    }
+  };
 
   return url ? (
-    <a className={`${handleTheme(theme)} ${handleType(type)}`} href={url}>
+    <a
+      className={`${handleTheme(theme)} ${handleType(type)} 
+      ${handleColor(color)} ${classes.urlHover}`}
+      href={url}
+    >
       {text}
     </a>
   ) : (
-    <p className={`${handleTheme(theme)} ${handleType(type)}`}>{text}</p>
+    <p
+      className={`${handleTheme(theme)} ${handleType(type)} ${handleColor(
+        color
+      )}`}
+    >
+      {text}
+    </p>
   );
 };

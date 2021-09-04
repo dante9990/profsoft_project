@@ -2,8 +2,8 @@ import React from "react";
 import { Main } from "../../Layouts/Main";
 import { Wrapper } from "../../Components/Wrapper";
 import { Container } from "../../Components/Container";
-import { Personal } from "../../Components/Personal";
-import { MyCourses } from "../../Components/MyCourses";
+import { PersonalAccount } from "../../Components/Cabinet/PersonalAccount";
+import { MyCoursesBlock } from "../../Components/Cabinet/MyCoursesBlock";
 import { certificates } from "../../redux/data";
 import { RootState } from "../../redux/type";
 import { ActionState } from "../../types/auth";
@@ -28,7 +28,7 @@ export const Cabinet = () => {
     <Main>
       <Wrapper theme={"dark"}>
         <Container>
-          <Personal />
+          <PersonalAccount />
         </Container>
       </Wrapper>
       <Wrapper theme={"light"}>
@@ -38,7 +38,7 @@ export const Cabinet = () => {
               <p className={classes.coursesHeaderText}>мои курсы</p>
             </div>
             {compareUsersAndCertificate.map((data) => (
-              <MyCourses data={data} />
+              <MyCoursesBlock data={data} />
             ))}
           </>
         </Container>

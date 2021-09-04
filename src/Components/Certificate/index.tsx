@@ -1,15 +1,15 @@
 import classes from "./certificate.module.scss";
 import React, { useContext } from "react";
-import { ReactComponent as CertBack } from "../../assets/certBack.svg";
-import { ReactComponent as Chel } from "../../assets/chel.svg";
+import { ReactComponent as CertBack } from "../../assets/certificate elements/certBack.svg";
+import { ReactComponent as Chel } from "../../assets/certificate elements/chel.svg";
 import { ReactComponent as Logo } from "../../assets/Logo.svg";
-import { ReactComponent as Sign } from "../../assets/sign.svg";
+import { ReactComponent as Sign } from "../../assets/certificate elements/sign.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { RootStateCertificate } from "../../redux/type";
 import { CertificateState } from "../../types/cert";
 import { CertificateForm } from "../CertificateForm";
 
-export const CertificateComponent = () => {
+export const Certificate = () => {
   const state = useSelector<RootStateCertificate, CertificateState>(
     (state) => state.cert
   );
@@ -33,7 +33,10 @@ export const CertificateComponent = () => {
             />
           </div>
           <div className={classes.pictureCont}>
-            <CertBack className={classes.certBack} />
+            <div className={classes.shareHolder}>
+              <CertBack className={classes.certBack} />
+              <div className={classes.share}>Поделиться</div>
+            </div>
             <Chel className={classes.chel} />
             <div className={classes.certContainer}>
               <Logo className={classes.logo} />

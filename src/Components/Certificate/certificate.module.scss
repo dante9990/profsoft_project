@@ -10,15 +10,21 @@
   font-style: normal;
 }
 
-.cert_items{
-  margin-bottom: 20px;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 25px;
-}
 .pictureCont{
 position: relative;
   z-index: 1;
+}
+.shareHolder{
+  position: relative;
+}
+.share{
+  position: absolute;
+  left: 87.6%;
+  top: 110%;
+  text-decoration-line: underline;
+  text-transform: lowercase;
+  font-size: 18px;
+  line-height: 19px;
 }
 .certContainer{
   display: flex;
@@ -43,7 +49,9 @@ position: relative;
   flex-direction: column;
   justify-content: space-between;
 }
-
+.certInfo{
+  margin-top: 85px;
+}
 .mainText{
   font-family: 'SF Pro Display';
   font-weight: 300;
@@ -117,8 +125,14 @@ margin-bottom:98px;
   .certBack{
     max-height: 167px;
     max-width: 300px;
-
   }
+  .share{
+    top:113%;
+    left: 72.5%;
+    font-size: 14px;
+    line-height: 19px;
+  }
+
 
   .logo{
     width: 67px;
@@ -131,11 +145,6 @@ margin-bottom:98px;
     z-index: 3;
   }
 
-  .cert_items{
-    margin-bottom: 20px;
-    font-size: 13px;
-    line-height: 19px;
-  }
   .pictureCont{
     margin-bottom: -80px;
     position: relative;
@@ -151,15 +160,6 @@ margin-bottom:98px;
     width: 100%;
     z-index: 2;
   }
-
-  .secondItems{
-    margin-top: -16px;
-  }
-  .itemHeader{
-
-    &__greyHeader{
-      color: #898989;
-    }}
   .studentContainer{
     margin-top: -120px;
     display: flex;
@@ -236,12 +236,24 @@ margin-bottom:98px;
 
 
 }
+@media (max-width: 300px) {
+  .share{
+    top:113%;
+    left: 60%;
+  }
+}
 
 @media screen and (min-width:580px) and (max-width:950px) {
   .certBack{
     max-height: 250.5px;
     max-width: 450px;
 
+  }
+  .share{
+    top:103.5%;
+    left: 81.5%;
+    font-size: 14px;
+    line-height: 19px;
   }
 
   .logo{
@@ -254,19 +266,9 @@ margin-bottom:98px;
     width: 200px;
   }
 
-  .cert_items{
-    margin-bottom: 20px;
-    font-size: 13px;
-    line-height: 19px;
-  }
   .pictureCont{
     margin-bottom: -80px;
   }
-
-  .secondItems{
-    margin-top: -16px;
-  }
-
   .studentContainer{
     margin-top: -120px;
   }

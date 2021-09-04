@@ -1,13 +1,58 @@
-.certInfo{
-  margin-top: 85px;
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('../../fonts/SFProDisplay-Medium.eot');
+  src: local('SF Pro Display Medium'), local('SFProDisplay-Medium'),
+  url('../../fonts/SFProDisplay-Medium.eot?#iefix') format('embedded-opentype'),
+  url('../../fonts/SFProDisplay-Medium.woff2') format('woff2'),
+  url('../../fonts/SFProDisplay-Medium.woff') format('woff'),
+  url('../../fonts/SFProDisplay-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+.cert_items{
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
 }
 
+.secondItems{
+  margin-top: -16px;
+}
 .itemHeader{
 
   &__greyHeader{
     color: #898989;
   }}
 
-.secondItems{
-  margin-top: -16px;
+@media (max-width: 580px) {
+
+  .cert_items{
+    margin-bottom: 20px;
+    font-size: 13px;
+    line-height: 19px;
+  }
+  .secondItems{
+    margin-top: -16px;
+  }
+  .itemHeader{
+
+    &__greyHeader{
+      color: #898989;
+    }}
+
+}
+@media (max-width: 300px) {
+@media screen and (min-width:580px) and (max-width:950px) {
+
+  .cert_items {
+    margin-bottom: 20px;
+    font-size: 13px;
+    line-height: 19px;
+  }
+}
+
+  .secondItems{
+    margin-top: -16px;
+  }
 }

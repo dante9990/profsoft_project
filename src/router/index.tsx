@@ -1,15 +1,15 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { Landing } from "../Pages/Landing";
+import { Courses } from "../Pages/Courses";
 import { Login } from "../Pages/Login";
 import { Cabinet } from "../Pages/Cabinet";
 import { RootState } from "../redux/type";
 import { ActionState } from "../types/auth";
 import { useSelector } from "react-redux";
-import { CoursesPage } from "../Pages/CoursesPage";
 
 const ErrorComponent = () => {
-  return <div>not found</div>;
+  return <div>Not found</div>;
 };
 
 export const Router = () => {
@@ -22,7 +22,7 @@ export const Router = () => {
         <Route path={"/personal"} component={Cabinet} exact={true} />
       ) : null}
       <Route path={"/login"} component={Login} exact={true} />
-      <Route path={"/courses"} component={CoursesPage} exact={true} />
+      <Route path={"/courses"} component={Courses} exact={true} />
       <Route component={ErrorComponent} />
     </Switch>
   );

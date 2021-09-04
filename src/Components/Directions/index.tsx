@@ -1,10 +1,16 @@
 import classes from "./directions.module.scss";
 import React from "react";
 import { Text } from "../Text";
-import { ReactComponent as WhiteArrow } from "../../assets/whiteArrow.svg";
-import { ReactComponent as Union } from "../../assets/Union.svg";
+import { ReactComponent as WhiteArrow } from "../../assets/arrows crosses and other/whiteArrow.svg";
+import Paper from "@material-ui/core/Paper";
+import { ReactComponent as Union } from "../../assets/arrows crosses and other/Union.svg";
+import { NavLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export const Directions = () => {
+  const history = useHistory();
+  const handleClick = () => history.push("/courses");
+
   return (
     <div className={classes.directionsArea}>
       <div className={classes.header_elements}>
@@ -16,7 +22,9 @@ export const Directions = () => {
             text={"Все направления обучения"}
           />
         </p>
-        <WhiteArrow className={classes.whiteArrow} />
+
+        <WhiteArrow className={classes.whiteArrow} onClick={handleClick} />
+
         <Union className={classes.cross} />
       </div>
 

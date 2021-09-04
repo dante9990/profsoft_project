@@ -3,18 +3,24 @@
   justify-content: space-between;
   align-content: center;
   height: 20vh;
-
 }
 
 .footerLinks{
-  padding-top: 2%;
+  padding-top: 4%;
   width: 276px;
 }
+.profsoftLink{
+  margin-bottom: 10px;
+}
+
 @media (max-width: 600px) {
   .footer {
     height: 270px;
     flex-direction: column;
     padding-bottom: 31px;
+  }
+  .profsoftLink{
+    padding-bottom: 15px;
   }
 
   .footerLinks{

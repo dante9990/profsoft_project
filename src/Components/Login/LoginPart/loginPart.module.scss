@@ -1,0 +1,121 @@
+.loginBlockContainer{
+  height: 60vh;
+  padding-top: 75px;
+}
+
+.login_header{
+
+}
+.input{
+  margin-right: 20px;
+  width: 277px;
+  height: 61px;
+  background: transparent;
+  border: 2px solid #898989;
+  border-radius: 42px;
+  font-size: 18px;
+  line-height: 46px;
+  outline: none;
+  align-items: center;
+  padding: 0 20px 0 20px;
+  color: #F1F1F1;
+  caret-color:#FFE924;
+}
+.form_container{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.block_for_form{
+  margin-top: 50px;
+}
+
+.white_arr{
+  outline: none;
+  border: 0;
+  width: 36.61px;
+  height: 21.61px;
+  background: transparent url('../../../assets/arrows crosses and other/whiteArr.svg') no-repeat center;
+}
+.supportPar{
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #919191;
+  margin-bottom: 2px;
+}
+.whiteLink{
+  color: #FFFFFF;
+}
+
+.supportParContainer{
+  margin-top: 30px;
+}
+.innerSupportParCont{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 352px;
+}
+
+@media (max-width: 581px)  {
+  .loginBlockContainer{
+    height: 70.3vh;
+    padding-top: 150px;
+    border-bottom: 2px solid #898989;
+  }
+
+  .input{
+    margin-right: 15px;
+    max-width: 220px;
+    max-height: 40px;
+    border: 1.3138px solid #898989;
+    border-radius: 20px;
+    font-size: 11.8242px;
+    line-height: 30px;
+    outline: none;
+    align-items: center;
+    padding: 0 20px 0 20px;
+    color: #F1F1F1;
+    caret-color:#FFE924;
+  }
+  .white_arr{
+    background: transparent url('../../../assets/arrows crosses and other/wh_arr_small.svg') no-repeat center;
+  }
+  .supportPar{
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .supportParContainer{
+    margin-top: 20px;
+    max-width: 200px;
+  }
+}
+@media (max-width: 900px){
+  .input{
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 600px){
+  .loginBlockContainer{
+    margin-bottom: 0;
+  }
+
+}
+
+@media (max-width: 600px){
+  .loginBlockContainer{
+    height: 70.3vh;
+    padding-top: 150px;
+
+  }
+
+}
+
+@media (max-height: 700px)  {
+  .loginBlockContainer{
+    padding-top: 60px;
+    height: 74vh;
+  }}

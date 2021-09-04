@@ -1,0 +1,313 @@
+.textPart{
+  height: 60vh;
+  padding-top: 75px;
+}
+.textPartSmall{
+  padding-top: 75px;
+
+}
+.coursesHeader{
+  display: flex;
+  flex-wrap: wrap;
+}
+.descriptionHeader_1{
+  margin-right: 25px;
+}
+.descriptionHeader_2{
+}
+
+.descr_text_1{
+  margin-top: -7px;
+}
+.descr_text_2{
+  margin-top: -16px;
+}
+.yellowButton{
+  margin-top: 59px;
+  margin-bottom: 120px;
+}
+
+.selectorHeader{
+  display: none;
+}
+.white_arr{
+  outline: none;
+  border: 0;
+  width: 36.61px;
+  height: 21.61px;
+  background: transparent url('../../../assets/arrows crosses and other/whiteArr.svg') no-repeat center;
+}
+.white_cross{
+  outline: none;
+  border: 0;
+  width: 19px;
+  height: 19px;
+  background: transparent url('../../../assets/arrows crosses and other/whiteCross.svg') no-repeat center;
+
+}
+
+.selector{
+  position: relative;
+  width: 298px;
+  height: 61px;
+  padding: 0 20px 0 20px;
+  background: #1C1C1C;
+  border: 2px solid #898989;
+  border-radius: 42px;
+  -webkit-appearance: none;/* Chrome */
+  -moz-appearance: none;/* Firefox */
+  appearance: none;/* убираем дефолнтные стрелочки */
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 46px;
+  text-transform: uppercase;
+  color: #F1F1F1;
+  outline: none;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+
+}
+
+
+.selectUp{
+  position: absolute;
+  background: url("../../../assets/arrows crosses and other/selectorUp.svg") no-repeat 97%;
+}
+
+.selectDown{
+  width: 38px ;
+  z-index: 3;
+  position: absolute;
+  right:3%
+  //background: url("../../assets/selectorDown.svg") no-repeat 97%;
+}
+
+.option{
+  appearance: none;
+  -webkit-appearance: none;/* Chrome */
+  -moz-appearance: none;
+  color: #1C1C1C;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 46px;
+}
+
+.select{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.selector1{
+  margin-right: 15px;
+}
+.selector2{
+  margin-right: 15px;
+  width: 215px;
+}
+.placeholder{
+  background-color:transparent;
+  border:none;
+  height: 100%;
+  width: 100%;
+  padding: 0 1px 0 1px;
+  display: flex;
+  align-items: center;
+
+}
+.placeholderText{
+  font-size: 18px;
+  line-height: 46px;
+  text-transform: uppercase;
+  color: #F1F1F1;
+}
+
+.arrowSelect{
+  content: url("../../../assets/arrows crosses and other/selectorDown.svg");
+  right: 0px;
+  top:20px;
+}
+
+.menuDropDown{
+  position: absolute;
+  width: 95.6%;
+  background-color: white;
+  top:57px;
+  border-radius: 0 25px 25px 25px;
+  color: #1C1C1C;
+  border: none;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.menuItem{
+  margin-left: 21px;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 46px;
+  text-transform: uppercase;
+  align-items: center;
+  width: 100%;
+  margin-bottom: -10px;
+  cursor: pointer;
+  &:first-child{
+    margin-top: 7px;
+  }
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
+.menuDropDown2{
+  right: 1.95px;
+  border-radius: 0 25px 25px 25px;
+  color: #1C1C1C;
+  border: none;
+}
+
+.select1{
+  position: relative;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.select2{
+  position: relative;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.abstract{
+  position: absolute;
+  top: 28.6px;
+  z-index: 0;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+}
+
+.yellowButtonMargin{
+  margin-top: 59px;
+  margin-bottom: 58px;
+}
+
+@media (max-width: 599px) {
+  .yellowButton{
+    margin-bottom: 60px;
+  }
+  .placeholderText{
+    font-size: 11.8242px;
+    line-height: 30px;
+    text-transform: uppercase;
+    color: #F1F1F1;
+  }
+
+}
+
+
+@media (min-width: 900px) {
+  .yellowButton{
+    margin-top: 59px;
+    margin-bottom: 130px;
+  }
+  .arrowSelect{
+    top:26px;
+  }
+
+}
+
+
+
+@media (max-width: 581px) {
+  .textPart{
+    height: 60vh;
+    margin-top: 38px;
+  }
+  .textPartSmall{
+    margin-top: 38px;
+  }
+  .descriptionHeader_1{
+    margin-bottom: -15px;
+  }
+  .white_arr{
+    background: transparent url('../../../assets/arrows crosses and other/wh_arr_small.svg') no-repeat center;
+  }
+  .white_cross{
+    background: transparent url('../../../assets/arrows crosses and other/wh_cross_small.svg') no-repeat center;
+
+  }
+  .selector{
+    width: 195px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 40px;
+    font-size: 11.8242px;
+    line-height: 30px;
+  }
+  .selector2{
+    margin-top: 18px;
+    width: 141px;
+    height: 40px;
+  }
+
+  .select1{
+    margin-bottom: 15px;
+  }
+  .arrowSelect{
+    top:17px;
+  }
+  .abstract{
+    top: 20px;
+  }
+  .menuDropDown{
+    top:39px;
+  }
+
+.menu1{
+  position: absolute;
+  z-index: 1010;
+}
+  .menu2{
+    z-index: 1000;
+  }
+  .select2{
+    z-index: 1;
+  }
+}
+
+
+@media screen and (min-width:581px) and (max-width:900px) {
+  .descriptionHeader_1{
+    margin-bottom: 0;
+  }
+  .selector{
+    width: 230px;
+    height: 47px;
+    font-size: 14px;
+    line-height: 40px;
+
+  }
+  .selector2{
+    width: 166px;
+    height: 47px;
+  }
+
+  .menuDropDown{
+    top:45px;
+  }
+
+
+}
+@media (max-width: 253px) {
+  .white_arr{
+    margin-top: 18px;
+    margin-left: 7px;
+  }
+}
+

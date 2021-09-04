@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Text } from "../Text";
 import NumberFormat from "react-number-format";
 import { Element } from "react-scroll";
-import { CertificateComponent } from "../Certificate/index";
+import { Certificate } from "../Certificate";
 import { RootStateCertificate } from "../../redux/type";
 import {
   changeShow,
@@ -44,7 +44,7 @@ export const InputChecker = () => {
           id: certArr[0].id,
           number: certArr[0].number,
           fullName: certArr[0].fullName,
-          direction: certArr[0].direction,
+          direction: certArr[0].number,
           dateFinish: certArr[0].dateFinish,
           dateStart: certArr[0].dateStart,
           features: certArr[0].features,
@@ -54,7 +54,9 @@ export const InputChecker = () => {
 
       setInputActive(true);
     } else if (certArr.length === 0 && !(state.isShow && buttonChecker)) {
+      //console.log("Нужно удаляться");
       dispatch(deleteCert());
+      //console.log(state);
       setButtonChecker(false);
       setInputActive(false);
     }
@@ -79,6 +81,8 @@ export const InputChecker = () => {
       dispatch(deleteCert());
       setButtonChecker(false);
       setInputActive(false);
+      //console.log(buttonChecker);
+      //console.log(inputActive);
     }
   };
 
@@ -128,7 +132,7 @@ export const InputChecker = () => {
       </form>
       {inputActive && buttonChecker ? (
         <div className={classes.certInfo}>
-          <CertificateComponent />
+          <Certificate />
         </div>
       ) : null}
     </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { Main } from "../../Layouts/Main";
 import { Wrapper } from "../../Components/Wrapper";
 import { Container } from "../../Components/Container";
-import { LoginCom } from "../../Components/Login";
+import { LoginPart } from "../../Components/Login/LoginPart";
 import classes from "./login.module.scss";
 export const Login = () => {
   return (
@@ -10,7 +10,7 @@ export const Login = () => {
       <Main>
         <Wrapper theme={"dark"}>
           <Container>
-            <LoginCom />
+            <LoginPart />
           </Container>
         </Wrapper>
       </Main>

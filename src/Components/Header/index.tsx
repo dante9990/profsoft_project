@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 import classes from "./header.module.scss";
 import { ReactComponent as Logo } from "../../assets/Logo.svg";
 import { ReactComponent as LightLogo } from "../../assets/lightLogo.svg";
-import { ReactComponent as Union } from "../../assets/Union.svg";
-import { ReactComponent as MenuIcon } from "../../assets/menu.svg";
+import { ReactComponent as Union } from "../../assets/arrows crosses and other/Union.svg";
+import { ReactComponent as MenuIcon } from "../../assets/arrows crosses and other/menu.svg";
 import { Props } from "../MobileMenu";
 import { RootState } from "../../redux/type";
 import { ActionState } from "../../types/auth";
@@ -19,7 +19,6 @@ export const Header = (props: Props) => {
   const setLogout = () => {
     dispatch(logout());
   };
-
   return (
     <>
       <header className={classes.header}>
@@ -31,16 +30,18 @@ export const Header = (props: Props) => {
         </NavLink>
         <div className={props.active ? classes.hide : ""}>
           <a
-            href={"https://academy.profsoft.pro/"}
+            href={"https://profsoft.pro/"}
             className={classes.header__linkProfsoft}
-          >
-            Академия
-          </a>
-          <a
-            href={"https://www.profsoft.pro/"}
-            className={classes.header__linkProfsoft}
+            target="_blank"
           >
             Компания
+          </a>
+          <a
+            href={"https://academy.profsoft.pro/"}
+            className={classes.header__linkProfsoft}
+            target="_blank"
+          >
+            Академия
           </a>
           <NavLink
             to={"/courses"}

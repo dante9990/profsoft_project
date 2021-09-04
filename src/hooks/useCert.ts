@@ -13,6 +13,7 @@ type UseCertType = {
   certDataAll(): Promise<CertData>;
 };
 
+// @ts-ignore
 function getCertData({
   id,
   number,

@@ -1,8 +1,11 @@
 .textPart{
+  //max-height: 490px;
   border-bottom: 3px solid #898989;
   margin-top: 95px;
 }
-
+.blockWithNumbers{
+  //max-height: 330px;
+}
 .headerWhy{
   margin-top: 66px;
 }
@@ -57,6 +60,7 @@
 .descr_text_2{
   margin-top: -16px;
 }
+
 
 
 @media (max-width: 599px) {}

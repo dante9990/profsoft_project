@@ -5,12 +5,17 @@
     font-style: normal;
 }
 
-
-body {
+html, body {
     margin: 0;
     padding: 0;
 }
 
+/** {*/
+/*    color: black;*/
+/*    font-family: 'Golos Text';*/
+/*}*/
 a {
     text-decoration: none;
+
 }
+

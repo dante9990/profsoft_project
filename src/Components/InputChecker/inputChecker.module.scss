@@ -4,11 +4,13 @@
   flex-direction: column;
 }
 .certHeader{
+  //padding-top: 87px;
   margin-top:56px;
 }
 .descriptionText{
   margin-top: -18px;
 }
+
 .inputForm{
   color: #1C1C1C;
   margin-top: 20px;
@@ -42,7 +44,7 @@
   border: 0;
   width: 38.61px;
   height: 23.61px;
-  background: transparent url('../../assets/arrow.svg') no-repeat center;
+  background: transparent url('../../assets/arrows crosses and other/arrow.svg') no-repeat center;
   position: absolute;
 
 }
@@ -51,7 +53,7 @@
   border: 0;
   width: 38.61px;
   height: 23.61px;
-  background: transparent url('../../assets/black_arrow.svg') no-repeat center;
+  background: transparent url('../../assets/arrows crosses and other/black_arrow.svg') no-repeat center;
   position: absolute;
 
 }
@@ -60,7 +62,7 @@
   border: 0;
   width: 38.61px;
   height: 23.61px;
-  background: transparent url('../../assets/retry.svg') no-repeat center;
+  background: transparent url('../../assets/arrows crosses and other/retry.svg') no-repeat center;
   position: absolute;
 
 }
@@ -75,6 +77,10 @@
 .inputEl{
 
 }
+.certAndShare{
+
+}
+
 
 @media (max-width: 376px) {
 

@@ -1,6 +1,6 @@
-import React from "react";
 import { CertificateState } from "../../types/cert";
 import classes from "./certificateForm.module.scss";
+import React from "react";
 
 export const CertificateForm = (certificate: CertificateState) => {
   return (

@@ -15,8 +15,7 @@
 
 .blockForCross{
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: flex-start;
 }
 .menu_item{margin-bottom: 21px;}
 
@@ -33,11 +32,37 @@
 }
 
 .footer_item{
+  display: block;
   font-weight: 600;
   font-size: 14px;
   line-height: 21px;
   text-transform: uppercase;
   color: #898989;
   margin-bottom: 22px;
+  &:hover {
+    opacity: 0.2;
+    color: #FFE924;
+  }
 }
 
+@media (min-width:581px) {
+  .menuCross{
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 581px) {
+  .menuCross{
+   margin-top: 18px;
+  }
+}
+@media screen and (min-width:581px) and (max-width:599px) {
+  .menuCross{
+    margin-top: 16px;
+  }
+}
+@media (min-width:600px) {
+  .menuCross{
+    margin-top: 27px;
+  }
+}
